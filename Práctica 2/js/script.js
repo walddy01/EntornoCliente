@@ -56,16 +56,10 @@ function inicio() {
         }
       } else {
         final = true;
-        document.getElementById("c4").textContent =
-          "Has acertado: " + randomNum;
+        document.getElementById("c4").textContent = "Has acertado: " + randomNum;
         document.getElementById("c4").style.backgroundColor = "green";
+        document.getElementById("c4").style.fontSize = "20px";
       }
     }
-
-    // do {
-    //   intento = prompt("Introduce un número del 0 al 5: ");
-    // } while (intento != ramdomNum);
-    // document.getElementById("c4").textContent = "Has acertado: " + ramdomNum;
-    // document.getElementById("c4").style.backgroundColor = "green";
   }
 }
