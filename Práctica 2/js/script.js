@@ -34,6 +34,10 @@ function inicio() {
     document.getElementById("c2").style.fontSize = "50px";
   }
   function funcion3() {
-    alert("Estoy en el tercer evento");
+    let num1 = prompt("Introduce un número: ");
+    let num2 = prompt("Introduce otro número: ");
+    document.getElementById("c3").textContent =(parseInt(num1) + parseInt(num2));
+    document.getElementById("c3").style.fontSize = "50px";
+    document.getElementById("c3").style.backgroundColor = "orange";
   }
 }
