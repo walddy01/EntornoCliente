@@ -25,13 +25,15 @@ function inicio() {
     } */
   }
   function funcion2() {
-    const colores = ["red", "green", "blue", "yellow"];
-    let indice = Math.round(Math.random() * 4);
+    const colores = ["red", "green", "blue", "yellow", "purple"];
+    let indice = Math.round(Math.random() * 5);
     document.getElementById("c2").style.backgroundColor = colores[indice];
 
     let numero2 = Math.round(Math.random() * 100);
     document.getElementById("c2").textContent = numero2;
     document.getElementById("c2").style.fontSize = "50px";
   }
-  function funcion3() {}
+  function funcion3() {
+    alert("Estoy en el tercer evento");
+  }
 }
