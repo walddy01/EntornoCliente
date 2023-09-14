@@ -36,8 +36,36 @@ function inicio() {
   function funcion3() {
     let num1 = prompt("Introduce un número: ");
     let num2 = prompt("Introduce otro número: ");
-    document.getElementById("c3").textContent =(parseInt(num1) + parseInt(num2));
+    document.getElementById("c3").textContent = parseInt(num1) + parseInt(num2);
     document.getElementById("c3").style.fontSize = "50px";
     document.getElementById("c3").style.backgroundColor = "orange";
+  }
+
+  function funcion4() {
+    let randomNum = Math.round(Math.random() * 10);
+    let intento;
+
+    let final = false;
+    while (!final) {
+      intento = prompt("Introduce un número del 0 al 10: ");
+      if (intento != randomNum) {
+        if (intento > randomNum) {
+          alert("El número es menor");
+        } else {
+          alert("El número es mayor");
+        }
+      } else {
+        final = true;
+        document.getElementById("c4").textContent =
+          "Has acertado: " + randomNum;
+        document.getElementById("c4").style.backgroundColor = "green";
+      }
+    }
+
+    // do {
+    //   intento = prompt("Introduce un número del 0 al 5: ");
+    // } while (intento != ramdomNum);
+    // document.getElementById("c4").textContent = "Has acertado: " + ramdomNum;
+    // document.getElementById("c4").style.backgroundColor = "green";
   }
 }
