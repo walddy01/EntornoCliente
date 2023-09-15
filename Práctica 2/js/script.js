@@ -7,6 +7,9 @@ function inicio() {
   document.getElementById("btn3").addEventListener("click", funcion3);
   document.getElementById("btn4").addEventListener("click", funcion4);
   document.getElementById("btn5").addEventListener("click", funcion5);
+  document.getElementById("btn6").addEventListener("click", funcion6);
+  document.getElementById("btn7").addEventListener("click", funcion7);
+  document.getElementById("btn8").addEventListener("click", funcion8);
   function funcion1() {
     let numero1 = Math.round(Math.random() * 100);
 
@@ -57,10 +60,42 @@ function inicio() {
         }
       } else {
         final = true;
-        document.getElementById("c4").textContent = "Has acertado: " + randomNum;
+        document.getElementById("c4").textContent =
+          "Has acertado: " + randomNum;
         document.getElementById("c4").style.backgroundColor = "green";
         document.getElementById("c4").style.fontSize = "20px";
       }
+    }
+  }
+
+  function funcion5() {
+    let fecha = new Date();
+    document.getElementById("c5").textContent = fecha.getFullYear();
+  }
+
+  function funcion6() {
+    let fecha = new Date();
+    let dia = fecha.getDay();
+    let mes = fecha.getMonth();
+    let anio = fecha.getFullYear();
+    let hora = fecha.getHours();
+    let min = fecha.getMinutes();
+
+    document.getElementById("c6").textContent =
+      dia + "/" + mes + "/" + anio + " " + hora + ":" + min;
+  }
+
+  function funcion7() {
+    const listaComponentes = document.getElementsByClassName("caja");
+    for (let item of listaComponentes) {
+      item.textContent = Math.round(Math.random() * 100);
+    }
+  }
+
+  function funcion8() {
+    const listaComponentes = document.getElementsByClassName("caja");
+    for (let item of listaComponentes) {
+      item.context=prompt("Introduce un número: ");
     }
   }
 }
