@@ -1,3 +1,4 @@
+//Prueba Sincronización
 window.addEventListener("load", inicio);
 function inicio() {
   console.log("Estoy en la función inicio");
