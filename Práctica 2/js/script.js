@@ -183,7 +183,7 @@ function inicio() {
     }
     //Colores aleatorios
     const colores = ["red", "green", "blue", "yellow", "purple"];
-    intervalColor = setInterval(cambioColor, 1000);
+    intervalColor = setInterval(cambioColor, 500);
     function cambioColor(){
       color1 = Math.round(Math.random()*4);
       color2 = Math.round(Math.random()*4);
