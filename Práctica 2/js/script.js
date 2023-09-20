@@ -137,18 +137,17 @@ function inicio() {
   function funcion11() {
     let btn11 = document.getElementById("btn11");
     // btn11.setAttribute("disabled", true);
-    btn11.disabled=true;
+    btn11.disabled = true;
     let countdown = setInterval(cuentaAtras, 1000);
     let reloj = 10;
-  
+
     function cuentaAtras() {
       document.getElementById("c1").textContent = reloj;
-      
-  
+
       if (reloj == 0) {
         clearInterval(countdown);
         // btn11.removeAttribute("disabled");
-        btn11.disabled=false;
+        btn11.disabled = false;
       }
       reloj--;
     }
@@ -158,41 +157,42 @@ function inicio() {
     //Puntuación
     puntuacion = 0;
     document.getElementById("c4").textContent = "Puntuación: " + puntuacion;
-    document.getElementById("c1").addEventListener("click",fPuntuacion);
-    function fPuntuacion(){
-      if (color1 == color2){
+    document.getElementById("c1").addEventListener("click", fPuntuacion);
+    function fPuntuacion() {
+      if (color1 == color2) {
         puntuacion++;
+        document.getElementById("c4").textContent = "Puntuación: " + puntuacion;
+      } else {
+        puntuacion--;
         document.getElementById("c4").textContent = "Puntuación: " + puntuacion;
       }
     }
 
-
     let btn12 = document.getElementById("btn12");
-    btn12.disabled=true;
+    btn12.disabled = true;
     //Contador
     contador = 30;
     countdown = setInterval(cuentaAtras, 1000);
-    function cuentaAtras(){
+    function cuentaAtras() {
       document.getElementById("c3").textContent = contador;
-      if (contador == 0 ){
+      if (contador == 0) {
         clearInterval(countdown);
-        clearInterval(intervalColor)
-        btn12.disabled=false;
+        clearInterval(intervalColor);
+        btn12.disabled = false;
       }
       contador--;
     }
     //Colores aleatorios
     const colores = ["red", "green", "blue", "yellow", "purple"];
-    intervalColor = setInterval(cambioColor, 500);
-    function cambioColor(){
-      color1 = Math.round(Math.random()*4);
-      color2 = Math.round(Math.random()*4);
+    intervalColor = setInterval(cambioColor, 1000);
+    function cambioColor() {
+      color1 = Math.round(Math.random() * 4);
+      color2 = Math.round(Math.random() * 4);
       document.getElementById("c1").style.backgroundColor = colores[color1];
       document.getElementById("c2").style.backgroundColor = colores[color2];
     }
 
     //Puntuación
-    document.getElementById("c1").addEventListener("click",fPuntuacion);
-    
+    document.getElementById("c1").addEventListener("click", fPuntuacion);
   }
 }
