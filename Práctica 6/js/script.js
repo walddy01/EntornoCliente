@@ -1,9 +1,9 @@
 window.onload = inicio;
 
 // Identidicar los elementos html
-let btnCargarImagen = document.getElementById("mostrarJS");
-let contenedor = document.getElementById("container");
-let cajaImagenes = document.getElementById("cajaImagenes");
+const btnCargarImagen = document.getElementById("mostrarJS");
+const contenedor = document.getElementById("container");
+const cajaImagenes = document.getElementById("cajaImagenes");
 
 
 function inicio() {
