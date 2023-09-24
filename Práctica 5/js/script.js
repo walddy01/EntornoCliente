@@ -8,6 +8,7 @@ const cResultado = document.getElementById("cResultado");
 const sppuntos = document.getElementById("sppuntos");
 const spfallos = document.getElementById("spfallos");
 const rCorrecta = document.getElementById("rCorrecta");
+const respuesta = document.getElementById("respuesta");
 
 // Variables
 let puntos = 0;
@@ -32,28 +33,18 @@ function inicio() {
     cResultado.addEventListener("click", calcular);
 
     function calcular() {
-      //cResultado.disabled = true;
-      if (parseInt(respuesta.value) == numCorrecto){
+      if (parseInt(respuesta.value) == numCorrecto) {
         puntos++;
         sppuntos.textContent = "Puntos: " + puntos;
-        //cResultado.disabled = false;
-        numerosAletorios();
-      }else{
+        rCorrecta.textContent = "¡Correcto! Has acertado";
+      } else {
         fallos++;
         spfallos.textContent = "Fallos: " + fallos;
+        rCorrecta.textContent = "La respuesta correcta era: " + numCorrecto;
       }
-      rCorrecta.textContent = "Respuesta correcta: " + numCorrecto;
+      numerosAletorios();
+
     }
-
-    
-
-
-    respuesta.value = "";
-    sppuntos.textContent = "Puntos: " + puntos;
-    spfallos.textContent = "Fallos: " + fallos;
-
-    
-
   }
 
   function numerosAletorios() {
@@ -68,5 +59,20 @@ function inicio() {
     multiplicando.textContent = num1;
     multiplicador.textContent = num2;
   }
-}
 
+  function terminar() {
+    btnInicio.disabled = false;
+    multiplicando.textContent = "";
+    multiplicador.textContent = "";
+
+    fallos = 0;
+    puntos = 0;
+
+    spfallos.textContent = "";
+    sppuntos.textContent = "";
+
+    rCorrecta.textContent = "";
+    respuesta.value = "";
+
+  }
+}
