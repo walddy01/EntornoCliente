@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    /*border:1px solid black;*/
+    border-radius: 1em;
+    margin: 20px auto;
+    padding: 1em;
+    width: 70%;
+}
+
+.gallery {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:1rem;
+}
+
+.fondo {
+    margin: 1em 1em;
+    width: 10%;
+    height: 10vh;
+    border:1px solid red;
+    text-align: center;
+    font-weight: bold;
+    background-color: green;
+}
+
+.ponerBorde{
+   border:5px solid red;
+}
+
+.quitarBorde{
+    border:none;
+}
+
+.disabledDiv {
+    pointer-events: none;
+    opacity: 0.4;
+}

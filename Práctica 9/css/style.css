@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border:1px solid black;
+    border-radius: 0px;
+    margin: 50px auto;
+    padding: 1rem;
+    width: 70%;
+}
+
+.gallery {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:1rem;
+}
+
+.gallery div {
+    margin: 1rem 1rem;
+    width: 15%;
+}
+.ponerBorde{
+   border:5px solid red;
+}
+.quitarBorde{
+    border:none;
+}
