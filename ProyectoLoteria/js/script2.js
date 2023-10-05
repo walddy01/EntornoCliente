@@ -10,6 +10,7 @@ let numRojos = 0;
 
 let vCajas = [];
 let vNumeros = [];
+let columnasNumeros = [];
 
 
 function inicio() {
@@ -40,7 +41,8 @@ function inicio() {
 
     contenedorS.appendChild(leyenda);
     contenedorP.appendChild(contenedorS);
-
+    columnasNumeros[i] = [];
+    console.log(columnasNumeros);
     for (let x = 0; x < NUM_CAJAS; x++) {
       // Creación de las 50 cajas
       let caja = document.createElement("div");
@@ -51,12 +53,13 @@ function inicio() {
 
       caja.onclick = marcar;
       function marcar() {
+        let indiceColumna = Array.from(contenedorP.children).indexOf(this.parentElement);
 
-        if (vNumeros.length < 6 && !vNumeros.includes(x + 1)) {
+        if (columnasNumeros[indiceColumna].length < 6 && !columnasNumeros[indiceColumna].includes(x + 1)) {
           console.log("Entro en marcar");
-          vCajas.push(caja);
+          vCajas.push(this);
           console.log("Soy X " + (x + 1));
-          vNumeros.push(x + 1);
+          columnasNumeros[indiceColumna].push(x + 1);
           caja.style.backgroundColor = "red";
           // caja.onclick = desmarcar;
           numRojos++;
@@ -142,12 +145,23 @@ function reset() {
     "Elige la columna a resetear: \n - 0 todo \n - 1 columna 1 \n - 2 columna 2 \n - 3 columna 3"
   );
 
-  if (resultado == 1) {
-    vCajas.forEach(accion1);
-
-    function accion1(item, index) {
-      item.style.backgroundColor = "green";
+  if (resultado == 0) {
+    // Resetear todas las columnas
+    for (let i = 0; i < NUM_COLUMNAS; i++) {
+      let cajasColumna = Array.from(contenedorP.children[i].querySelectorAll(".gallery.div"));
+      cajasColumna.forEach(caja => {
+        caja.style.backgroundColor = "green";
+      });
+      columnasNumeros[i] = [];
     }
-    vNumeros = [];
+  } else if (resultado >= 1 && resultado <= NUM_COLUMNAS) {
+    // Resetear una columna específica
+    let indiceColumna = resultado - 1; // El índice de la columna seleccionada
+    let cajasColumna = Array.from(contenedorP.children[indiceColumna].querySelectorAll(".gallery.div"));
+    cajasColumna.forEach(caja => {
+      caja.style.backgroundColor = "green";
+    });
+    columnasNumeros[indiceColumna] = [];
   }
 }
+
