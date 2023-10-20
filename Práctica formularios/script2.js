@@ -1,10 +1,11 @@
 var formulario = document.getElementById('cargar');
-var modulos = formulario.querySelectorAll('input[type="checkbox"][name="modulos"]');
+
 
 formulario.addEventListener('submit', function(event) {
   event.preventDefault();
 
   var ciclo = document.querySelector('input[name="radio"]:checked').value;
+  var modulos = formulario.querySelectorAll('input[type="checkbox"][name="modulos"]');
   var nombre = document.getElementById('nombre').value;
   var curso = document.getElementById('selectCurso').value;
 
