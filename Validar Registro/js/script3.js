@@ -1,83 +1,68 @@
-window.onload = inicio;
+window.onload=inicio();
 
-let bool = true;
+let bool=true;
+function inicio(){
+    let expediente=document.getElementById("expediente").value;
+    let nombre=document.getElementById("nombre").value;
+    let apellidos=document.getElementById("apellidos").value;
+    let dwec=document.getElementById("dwec").value;
+    let dwes=document.getElementById("dwes").value;
+    let ds=document.getElementById("ds").value;
+    let eie=document.getElementById("eie").value;
+    let diw=document.getElementById("diw").value;
 
-let ciclo = document.querySelector("input[name=radio]").value;
-let modulos = document.querySelectorAll("input[name=modulos]");
+    let smExpediente=document.getElementById("smExpediente");
+    let smNombre=document.getElementById("smNombre");
+    let smApellidos=document.getElementById("smApellidos");
+    let smDwec=document.getElementById("smDwec");
+    let smDwes=document.getElementById("smDwes");
+    let smDs=document.getElementById("smDs");
+    let smEie=document.getElementById("smEie");
+    let smDiw=document.getElementById("smDiw");
 
-let marcados = [];
+    let btnAccion=document.getElementById("btnAccion");
+    let accion=document.getElementById("accion");
 
-let nomb = document.getElementById("nombre").value;
-let curso = document.getElementById("selectCurso").value;
-let horas = document.querySelectorAll("select[name=multipleselect]");
-console.log(horas);
-let horasMarcadas = [];
-let comentario = document.getElementById("exampleFormControlTextarea1").value;
+    accion.onsubmit= function(){
+        if(expediente=="" || nombre=="" || apellidos=="" 
+        || dwec == "" || dwes == "" || ds=="" || eie=="" || diw==""){
+            bool=false;
+            smExpediente.innerHTML="*Campo Obligatorio";
+            smNombre.innerHTML="*Campo Obligatorio";
+            smApellidos.innerHTML="*Campo Obligatorio";
+            smDwec.innerHTML="*Campo Obligatorio";
+            smDwes.innerHTML="*Campo Obligatorio";
+            smDs.innerHTML="*Campo Obligatorio";
+            smEie.innerHTML="*Campo Obligatorio";
+            smDiw.innerHTML="*Campo Obligatorio";
 
-
-function inicio() {
-  console.log("entro en inicio");
-  let btnAceptar = document.getElementById("aceptar");
-  btnAceptar.onclick = obtenerDatos;
-
-  let accion = document.getElementById("cargar");
-
-  accion.onsubmit= function(){
-
-    let smCi = document.getElementById("smCiclo");
-    let smMo = document.getElementById("smModulos");
-    let smCu = document.getElementById("smCurso");
-    let smNo = document.getElementById("smNombre");
-    let smHo = document.getElementById("smHoras");
-
-
-    if(ciclo=="" || modulos=="" || curso=="" || nomb == "" || horas == ""){
-      bool=false;
-      smCi.innerHTML="*Campo Obligatorio";
-      smMo.innerHTML="*Campo Obligatorio";
-      smCu.innerHTML="*Campo Obligatorio";
-      smNo.innerHTML="*Campo Obligatorio";
-      smHo.innerHTML="*Campo Obligatorio";
+          }else{
+            console.log("entra en else");
+            let cadena=String(expediente);
+            if(cadena.length!=6){
+                bool=false;
+                smExpediente.innerHTML="* Cadena debe tener 6 caracteres";
+            }else{
+            for(let i; i<cadena.length-1; i++){
+                let caracter=cadena.charAt(i);
+                if(isNaN(caracter)){
+                    smExpediente.innerHTML="* Los 5 primeros tienen que ser números"
+                    bool=false;
+                }
+            }
+            let caracter=cadena.charAt(cadena.length-1);
+            if(!/[A-Z]/.test(caracter) && bool != false){
+                console.log(caracter);
+                smExpediente.innerHTML="* Último carácter letra mayúscula";
+                bool=false;
+            }
+            if(dwec<1 || dwec>10){
+                bool=false;
+                smDwec.innerHTML="* No cumple con el rango";
+            }
+        }
+            
+          }
+          return bool;
     }
-  return bool;
-  }
-}
-
-function obtenerDatos() {
-  console.log("entro en obtenerDatos");
-
-
-
-  modulos.forEach(obtenerMarcados);
-
-  function obtenerMarcados(item, index) {
-    if (item.checked) {
-      marcados.push(item.value);
-    }
-  }
-
-
-
-  for (let index = 0; index < horas[0].length; index++) {
-    if (horas[0][index].selected) {
-      horasMarcadas.push(horas[0][index].value);
-    }
-  }
-
-
-  let mensaje =
-    "Ciclo: " +
-    ciclo +
-    "\nModulos: " +
-    marcados +
-    "\nNombre: " +
-    nomb +
-    "\nCurso: " +
-    curso +
-    "\nHoras asistidas: " +
-    horasMarcadas +
-    "\nComentario: " +
-    comentario;
-
-
 }
