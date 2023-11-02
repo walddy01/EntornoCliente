@@ -1,8 +1,9 @@
 window.onload = inicio;
-window.onload = inicio;
 
 function inicio() {
-  let tabla = document.querySelector(".table tbody");
+
+  platos = document.querySelectorAll("#menu-lunch .row .col-lg-4");
+  console.log(platos);
   
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = cargar;
@@ -10,43 +11,16 @@ function inicio() {
   function cargar() {
     if (this.readyState == 4 && this.status == 200) {
       var objeto = JSON.parse(xhr.responseText);
-      objeto.forEach(recorrer);
+      platos.forEach(recorrerPlatos);
+      function recorrerPlatos(item, index) {
+    
+        item.querySelector("h4").textContent = objeto[index].nombre;
+        item.querySelector("p").textContent = objeto[index].ingredientes;
+        item.querySelector("img").src = objeto[index].imagen;
+        item.querySelector(".price").textContent = objeto[index].precio;
+      }
     }
-  }
-
-  function recorrer(item, index) {
     
-    // let fila = document.createElement("tr");
-
-    
-    // let idciudadtd = document.createElement("td");
-    // idciudadtd.textContent = item.ciudad_ID;
-    // fila.appendChild(idciudadtd);
-
-    // let nombreciudadtd = document.createElement("td");
-    // nombreciudadtd.textContent = item.ciudad_nombre;
-    // fila.appendChild(nombreciudadtd);
-
-    // let poblaciontd = document.createElement("td");
-    // poblaciontd.textContent = item.ciudad_poblacion;
-    // fila.appendChild(poblaciontd);
-
-    // let videotd = document.createElement("td");
-    // videotd.innerHTML = item.video;
-    // fila.appendChild(videotd);
-
-    // let imagentd = document.createElement("td");
-    // let imagen = document.createElement("img");
-    // imagen.src = item.imagen;
-    // imagen.width = 200;
-    // imagentd.appendChild(imagen);
-    // fila.appendChild(imagentd);
-
-    // let mapatd = document.createElement("td");
-    // mapatd.innerHTML = item.mapa;
-    // fila.appendChild(mapatd);
-
-    // tabla.appendChild(fila);
   }
 
   xhr.open("GET", "http://moralo.atwebpages.com/restaurante/getPlatos.php", true);
