@@ -1,11 +1,35 @@
 window.onload = inicio;
+
 let cajaMostrar = document.getElementById("mostrarCiudades");
+
+
+
+
 function inicio() {
     document.getElementById("btnInsertar").addEventListener("click", insertarCiudad);
+    document.getElementById("btnEliminar").addEventListener("click", eliminarCiudad);
+    document.getElementById("btnMostrar").addEventListener("click", mostrarCiudades);
+
+    
+    mostrarCiudades();
+
     
 
 }
 
+function eliminarCiudad() {
+    console.log("eliminar");
+
+    var id = document.getElementById("_id").value;
+
+    $.ajax({
+        url: 'http://moralo.atwebpages.com/menuAjax/ciudades/EliminarCiudades.php',
+        type: 'GET',
+        data: {
+            id:id
+        }
+    })
+}
 function insertarCiudad() {
     console.log("insertar");
 
@@ -13,23 +37,20 @@ function insertarCiudad() {
     var nombre = document.getElementById("_nombre").value;
     var poblacion = document.getElementById("_poblacion").value;
     var densidad = document.getElementById("_densidad").value;
-    var extencion = document.getElementById("_superficie").value;
+    var extension = document.getElementById("_superficie").value;
+    
 
     $.ajax({
         url: 'http://moralo.atwebpages.com/menuAjax/ciudades/insertarCiudades.php',
         type: 'POST',
         data: {
-            id: id,
-            nombre: nombre,
-            poblacion: poblacion,
-            densidad: densidad,
-            extencion: extencion
+            id:id,
+            nombre:nombre,
+            poblacion:poblacion,
+            densidad:densidad,
+            extension:extension
         }
     });
-
-
-    mostrarCiudades();
-
 }
 
 function mostrarCiudades() {
@@ -39,6 +60,7 @@ function mostrarCiudades() {
     xhr.onreadystatechange = cargar;
 
     function cargar() {
+        
         let bloqueHTML = document.createElement("div");
         if (this.readyState == 4 && this.status == 200) {
             var objeto = JSON.parse(xhr.responseText);
@@ -53,6 +75,7 @@ function mostrarCiudades() {
                     "<div class='col-lg-2'>" + item.densidad + "</div>" +
                     "<div class='col-lg-2'>" + item.extencion + "</div></div>";
             }
+            cajaMostrar.innerHTML = "";
             cajaMostrar.appendChild(bloqueHTML);
         }
     }
