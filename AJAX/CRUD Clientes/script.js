@@ -13,14 +13,16 @@ function inicio() {
 
 function cargarTabla() {
     var tabla = document.querySelector("#cajaTabla");
-    let bloqueHtml = document.createElement("div");
-    bloqueHtml.innerHTML = "<div class='row'>"+
-    "<div class='col-lg-2' text-center>DNI</div>"+
-    "<div class='col-lg-2' text-center>NOMBRE</div>"+
-    "<div class='col-lg-2' text-center>APELLIDO</div>"+
-    "<div class='col-lg-2' text-center>ELIMINAR</div>"+
-    "<div class='col-lg-2' text-center>MODIFICAR</div></div>";
+    let bloqueHtml = document.createElement("tr");
+    bloqueHtml.innerHTML = "<tr>"+ 
+    "<th class='col-lg-2' text-center>DNI</th>"+
+    "<th class='col-lg-2' text-center>NOMBRE</th>"+
+    "<th class='col-lg-2' text-center>APELLIDO</th>"+
+    "<th class='col-lg-2' text-center>ELIMINAR</th>"+
+    "<th class='col-lg-2' text-center>MODIFICAR</th>"+ "</tr>";
+    
     tabla.appendChild(bloqueHtml);
+   
 
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = cargar;
@@ -30,7 +32,13 @@ function cargarTabla() {
             var objeto = JSON.parse(xhr.responseText);
             objeto.forEach(recorrer);
             function recorrer(item, index){
-                
+                cajaTabla.innerHTML += "<tr> " +
+                "<td>" + item.dni + "</td>" +
+                "<td>" + item.nombre + "</td>" +
+                "<td>" + item.apellidos + "</td>" +
+                "<td><a class='btn btn-danger btn-md' href='javascript:void(0)' 'onclick=eliminar(\'"+item.dni+"\')>Eliminar</a> </td>" +
+                "<td><a class='btn btn-info btn-md' href='javascript:void(0)' 'onclick=modificar("+vector+")>Modificar</a></td>" +
+                "</tr>";
             }
         }
     }
