@@ -9,10 +9,64 @@ var total = 0;
 var calculoPrecio = 0;
 let precioTotal = document.getElementById("precio");
 
+let pwd = document.getElementById("idPwd");
+let btnGestionAl = document.getElementById("confirmar");
+let btnPDF = document.getElementById("imprimirPDF");
+btnPDF.onclick = mostrarPDF;
+let btnEnviarM = document.getElementById("enviarMail");
+btnEnviarM.onclick = enviarMail;
+btnGestionAl.onclick = login;
+
 function inicio() {
   cargarContenido();
   console.log(objeto);
 }
+
+function mostrarPDF() {
+    let ticket1 = document.getElementById("cestaCompra").innerHTML;
+    console.log(ticket1);
+
+    let estilo = "<style>"+
+    "table {width: 100%;font: 17px Calibri;}"+
+    "table, th, td {border: solid 1px #DDD; border-collapse: collapse;"+
+    "padding: 2px 3px;text-align: center;}"+
+    "</style>";
+
+    let win = window.open("ticket.pdf", "Fruteria", "height=700,width=700");
+    win.document.write('<html><head>');
+    win.document.write('<title>Ticket</title>'); //cabecera del pdf
+    win.document.write(estilo); // estilo cabecera
+    win.document.write('</head>');
+    win.document.write('<body>');
+    win.document.write("<table>");
+    win.document.write(ticket1);
+    win.document.write("</table>");
+    win.document.write("Total: "+precio.textContent) ; // contenidos dentro del body
+    win.document.write('</body></html>');
+    win.print();
+}
+// nziw rlls slvp nejm 
+function enviarMail() {
+    console.log("enviar")
+    alert("enviar mail");
+    Email.send({
+    Host: "smtp.gmail.com",
+    Username: "augustobrigaprofe@gmail.com",
+    Password: "nziwrllsslvpnejm",
+    To: 'profeaugustobriga@gmail.com',
+    From: 'augustobrigaprofe@gmail.com',
+    Subject: "Enviar mail usuario JS",
+    Body: "TODO OK!!",
+    // Attachments: [
+    // {
+    // name : "factura.pdf",
+    // path : pdfBase64
+    // }]
+    }).then(function () {
+    alert("MAIL ENVIADO OK")
+    }); 
+}
+
 function cargarFrutas() {
   bloqueHtml.className = "row";
   for (let i = 0; i < objeto.length; i++) {
@@ -36,7 +90,6 @@ function cargarFrutas() {
       '<p class="card-text">' +
       objeto[i].price +
       "</p></div></div>";
-     
   }
 
   cajaFrutas.appendChild(bloqueHtml);
@@ -76,8 +129,8 @@ function anadirCesta(vector) {
       vectorX[3] +
       "</td><td>" +
       calculoPrecio +
-      "</td>"+
-      "<td>"+ //simular botón con a href añado clase btn btn-danger (color rojo)
+      "</td>" +
+      "<td>" + //simular botón con a href añado clase btn btn-danger (color rojo)
       "<div class='col-lg-2 text-center mb-2'><a class='btn btn-danger btn-md'" +
       //anulo el href, no hay link , pero sí hay evento onclick con
       //parámetro incluido: dni de esa tupla
@@ -85,15 +138,23 @@ function anadirCesta(vector) {
       calculoPrecio +
       "')>" +
       //texto del botón e icono
-      "ELIMINAR<i class='bi-trash'></i></a></div> "+"</td>";
+      "ELIMINAR<i class='bi-trash'></i></a></div> " +
+      "</td>";
   }
   contenedorCesta.appendChild(cajaTr);
 }
 
 function eliminar(fila, calculo) {
+  //Subir de nivel hasta llegar a elmento padre tabla
   let filaTabla = fila.parentNode.parentNode;
+  //Subir un nivel más para coseguir el elemento tr de esa tabla y pasamos la tabla por parametro
   filaTabla.parentNode.remove(filaTabla);
-  console.log(objeto);
   total = total - calculo;
   precioTotal.textContent = total;
+}
+
+function login() {
+  if (pwd.value == "frutas") {
+    window.open("http://127.0.0.1:5500/Crud_Back/index.html");
+  }
 }
