@@ -53,7 +53,7 @@ function cargarTabla(){
        }
      } 
       //PRIMERO HAY QUE HACER LA PETICIÓN
- xhr.open("GET"," http://moralo.atwebpages.com/menuAjax/productos3/getProductos.php",true);
+ xhr.open("GET","http://moralo.atwebpages.com/menuAjax/productos3/getProductos.php",true);
  xhr.send();
   
  tabla.appendChild(bloqueHtml);
@@ -84,8 +84,7 @@ function insertarUsuario(){
 }
 function eliminar(id){
     console.log("entro en eliminar "+id);
-    let respuesta= true;
-    // confirm("¿Estás seguro de querer eliminar "+id+"?");
+    let respuesta=confirm("¿Estás seguro de querer eliminar "+id+"?");
     //cargar el método AJAX que ejecuta el servicio eliminar.php
     if (respuesta){
    
@@ -93,14 +92,14 @@ function eliminar(id){
       //url del servicio
       url:"http://moralo.atwebpages.com/menuAjax/productos3/eliminarProductos.php",
       //method
-      type:"GET",
+      type:"POST",
       data:{
         id:id
       },
       dataType:"JSON"
 
     });
-//    location.reload();
+   location.reload();
  }
 }
 function modificar(vector){
@@ -120,26 +119,26 @@ function modificar(vector){
  $('#formclientesModal').modal("show");
  document.querySelector("#btnModificar").addEventListener("click",accionAjaxModificar);
  function accionAjaxModificar(){
-    console.log("entro en modificar");
-    let idTxt=document.querySelector("#txtId").value;
-    let nombreTxt=document.querySelector("#txtNombre").value;
-    let precioTxt=document.querySelector("#txtPrecio").value;
-    let fotoTxt=document.querySelector("#txtFoto").value;
-    console.log("insertando: "+idTxt)
+    let id=document.querySelector("#txtId").value;
+    //alert(id);
+    let name=document.querySelector("#txtNombre").value;
+    let price=document.querySelector("#txtPrecio").value;
+    alert(price);
+    let photo=document.querySelector("#txtFoto").value;
     $.ajax({
         url:"http://moralo.atwebpages.com/menuAjax/productos3/modificarProductos.php",
-        type:"GET",
-        data: {
+        type:"POST",
+        data:{
 // sintaxis: variablePHP : variableJs
-           id:idTxt,
-           name:nombreTxt,
-           price:precioTxt,
-           photo:fotoTxt
+           id: id,
+           name: name,
+           price: price,
+           photo: photo
         },
         dataType:"JSON"
+        
     });
     location.reload();
-
  }
 
 }
