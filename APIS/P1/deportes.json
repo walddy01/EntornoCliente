@@ -1,0 +1,319 @@
+{
+    "sports": [
+        {
+            "idSport": "101",
+            "strSport": "Soccer",
+            "strFormat": "TeamvsTeam",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/soccer.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/soccer.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/soccer.png",
+            "strSportDescription": "Association football, more commonly known as football or soccer, is a team sport played between two teams of eleven players with a spherical ball. It is played by 250 million players in over 200 countries and dependencies, making it the world's most popular sport. The game is played on a rectangular field with a goal at each end. The object of the game is to score by getting the ball into the opposing goal.\r\n\r\nPlayers are not allowed to touch the ball with their hands or arms while it is in play, unless they are goalkeepers (and then only when within their penalty area). Other players mainly use their feet to strike or pass the ball, but may also use any part of their body except the hands and the arms. The team that scores the most goals by the end of the match wins. If the score is level at the end of the game, either a draw is declared or the game goes into extra time or a penalty shootout depending on the format of the competition. The Laws of the Game were originally codified in England by The Football Association in 1863. Association football is governed internationally by the International Federation of Association Football (FIFA; French: Fédération Internationale de Football Association), which organises World Cups for both men and women every four years."
+        },
+        {
+            "idSport": "102",
+            "strSport": "Motorsport",
+            "strFormat": "Various",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/motorsport.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/motorsport.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/motorsport.png",
+            "strSportDescription": "Motorsport includes various racing events involving motorized vehicles, such as cars, motorcycles, and more. It encompasses a wide range of disciplines and competitions, each with its own set of rules and challenges."
+        },
+        {
+            "idSport": "103",
+            "strSport": "Fighting",
+            "strFormat": "Various",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/fighting.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/fighting.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/fighting.png",
+            "strSportDescription": "Fighting sports include various disciplines where competitors engage in physical combat. This can involve striking, grappling, or a combination of both. Examples include boxing, mixed martial arts (MMA), and wrestling."
+        },
+        {
+            "idSport": "104",
+            "strSport": "Baseball",
+            "strFormat": "TeamvsTeam",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/baseball.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/baseball.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/baseball.png",
+            "strSportDescription": "Baseball is a bat-and-ball game played between two teams. The teams take turns batting and fielding, with the goal of scoring runs by hitting the pitched ball and running around a series of bases arranged in a diamond shape."
+        },
+        {
+            "idSport": "105",
+            "strSport": "Basketball",
+            "strFormat": "TeamvsTeam",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/basketball.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/basketball.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/basketball.png",
+            "strSportDescription": "Basketball is a team sport in which two teams, typically consisting of five players each, compete to score points by throwing a ball through the opponent's basket, which is mounted on a vertical hoop. Basketball is one of the most popular and widely viewed sports in the world."
+        },
+        {
+            "idSport": "106",
+            "strSport": "American Football",
+            "strFormat": "TeamvsTeam",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/american-football.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/american-football.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/american-football.png",
+            "strSportDescription": "American football is a team sport played between two teams of eleven players with an oval ball. The objective of the game is to score points by advancing the ball into the opposing team's end zone. It is a popular sport in the United States."
+        },
+        {
+            "idSport": "107",
+            "strSport": "Ice Hockey",
+            "strFormat": "TeamvsTeam",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/ice-hockey.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/ice-hockey.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/ice-hockey.png",
+            "strSportDescription": "Ice hockey is a team sport played on an ice rink, in which skaters use sticks to direct a puck into the opposing team's goal. It is a fast-paced and physical game popular in countries with cold climates."
+        },
+        {
+            "idSport": "108",
+            "strSport": "Golf",
+            "strFormat": "Individual",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/golf.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/golf.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/golf.png",
+            "strSportDescription": "Golf is a club-and-ball sport in which players use various clubs to hit balls into a series of holes on a course in as few strokes as possible. Golf is one of the few ball games that do not require a standardized playing area."
+        },
+        {
+            "idSport": "109",
+            "strSport": "Rugby",
+            "strFormat": "TeamvsTeam",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/rugby.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/rugby.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/rugby.png",
+            "strSportDescription": "Rugby is a team sport that involves running with an oval-shaped ball and scoring points by grounding the ball over the opponent's goal line. It is played in two main variations: rugby union and rugby league."
+        },
+        {
+            "idSport": "110",
+            "strSport": "Tennis",
+            "strFormat": "Individual",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/tennis.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/tennis.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/tennis.png",
+            "strSportDescription": "Tennis is a racket sport that can be played individually against a single opponent (singles) or between two teams of two players each (doubles). Each player uses a tennis racket that is strung with cord to strike a hollow rubber ball covered with felt over or around a net and into the opponent's court."
+        },
+        {
+            "idSport": "111",
+            "strSport": "Cricket",
+            "strFormat": "TeamvsTeam",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/cricket.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/cricket.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/cricket.png",
+            "strSportDescription": "Cricket is a bat-and-ball game played between two teams. It is a popular sport in many countries, especially in England, Australia, India, and the Indian subcontinent. The game involves batting, bowling, and fielding."
+        },
+        {
+            "idSport": "112",
+            "strSport": "Cycling",
+            "strFormat": "Various",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/cycling.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/cycling.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/cycling.png",
+            "strSportDescription": "Cycling includes various disciplines such as road cycling, track cycling, mountain biking, and BMX. It is a sport involving bicycles and competitions that vary in distance, terrain, and format."
+        },
+        {
+            "idSport": "113",
+            "strSport": "Australian Football",
+            "strFormat": "TeamvsTeam",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/australian-football.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/australian-football.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/australian-football.png",
+            "strSportDescription": "Australian rules football, also known as footy or Aussie rules, is a team sport played between two teams of eighteen players on an oval-shaped field. The primary aim is to score points by kicking the ball through the opponent's goalposts."
+        },
+        {
+            "idSport": "114",
+            "strSport": "ESports",
+            "strFormat": "Various",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/esports.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/esports.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/esports.png",
+            "strSportDescription": "ESports, short for electronic sports, refers to competitive video gaming. Players, often in teams, compete in various video game genres in organized tournaments and leagues."
+        },
+        {
+            "idSport": "115",
+            "strSport": "Volleyball",
+            "strFormat": "TeamvsTeam",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/volleyball.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/volleyball.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/volleyball.png",
+            "strSportDescription": "Volleyball is a team sport in which two teams of six players each are separated by a net. Each team tries to score points by grounding a ball on the other team's court under organized rules."
+        },
+        {
+            "idSport": "116",
+            "strSport": "Netball",
+            "strFormat": "TeamvsTeam",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/netball.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/netball.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/netball.png",
+            "strSportDescription": "Netball is a team sport with seven players on each team. The objective is to score goals by shooting a ball through a hoop positioned at each end of the court. Players must adhere to specific rules regarding movement and positions."
+        },
+        {
+            "idSport": "117",
+            "strSport": "Handball",
+            "strFormat": "TeamvsTeam",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/handball.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/handball.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/handball.png",
+            "strSportDescription": "Handball is a team sport in which two teams of seven players each pass a ball using their hands with the aim of throwing it into the goal of the other team. It is a fast-paced and physically demanding sport."
+        },
+        {
+            "idSport": "118",
+            "strSport": "Snooker",
+            "strFormat": "Individual",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/snooker.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/snooker.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/snooker.png",
+            "strSportDescription": "Snooker is a cue sport that involves players using a cue stick to pot balls into pockets on the snooker table. It is a game of precision, strategy, and skill, often played in a competitive and professional setting."
+        },
+        {
+            "idSport": "119",
+            "strSport": "Field Hockey",
+            "strFormat": "TeamvsTeam",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/field-hockey.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/field-hockey.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/field-hockey.png",
+            "strSportDescription": "Field hockey is a team sport of the hockey family. The game can be played on grass, watered turf, artificial turf, or synthetic field, as well as an indoor boarded surface. Each team plays with eleven players, including the goalie."
+        },
+        {
+            "idSport": "120",
+            "strSport": "Darts",
+            "strFormat": "Individual",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/darts.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/darts.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/darts.png",
+            "strSportDescription": "Darts is a sport where players throw small, pointed missiles known as darts at a circular target (dartboard) fixed to a wall. Though various boards and rules have been used in the past, the term 'darts' usually now refers to a standardized game involving a specific board design and set of rules."
+        },
+        {
+            "idSport": "121",
+            "strSport": "Athletics",
+            "strFormat": "Multi-Event",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/athletics.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/athletics.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/athletics.png",
+            "strSportDescription": "Athletics is a collection of sporting events that involve competitive running, jumping, throwing, and walking. The most common types of athletics competitions are track and field, road running, cross country running, and racewalking."
+        },
+        {
+            "idSport": "122",
+            "strSport": "Badminton",
+            "strFormat": "Individual",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/badminton.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/badminton.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/badminton.png",
+            "strSportDescription": "Badminton is a racquet sport played using racquets to hit a shuttlecock across a net. Although it may be played with larger teams, the most common forms of the game are 'singles' (with one player per side) and 'doubles' (with two players per side)."
+        },
+        {
+            "idSport": "123",
+            "strSport": "Climbing",
+            "strFormat": "Individual",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/climbing.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/climbing.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/climbing.png",
+            "strSportDescription": "Climbing is the activity of using one's hands, feet, or any other part of the body to ascend a steep object. It is done for locomotion, recreation, and competition, and within trades that rely on ascension."
+        },
+        {
+            "idSport": "124",
+            "strSport": "Equestrian",
+            "strFormat": "Multi-Event",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/equestrian.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/equestrian.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/equestrian.png",
+            "strSportDescription": "Equestrian sports are sports that use horses as a main part of the sport. This usually takes the form of the rider being on the horse's back, or the horses pulling some sort of horse-drawn vehicle."
+        },
+        {
+            "idSport": "125",
+            "strSport": "Gymnastics",
+            "strFormat": "Individual",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/gymnastics.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/gymnastics.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/gymnastics.png",
+            "strSportDescription": "Gymnastics is a sport that includes exercises requiring balance, strength, flexibility, agility, coordination, and endurance. The movements involved in gymnastics contribute to the development of the arms, legs, shoulders, back, chest, and abdominal muscle groups."
+        },
+        {
+            "idSport": "126",
+            "strSport": "Shooting",
+            "strFormat": "Individual",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/shooting.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/shooting.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/shooting.png",
+            "strSportDescription": "Shooting sports is a collective group of competitive and recreational sporting activities involving proficiency tests of accuracy, precision, and speed in shooting, using various types of ranged weapons, mainly referring to man-portable guns (firearms) and bows/crossbows."
+        },
+        {
+            "idSport": "127",
+            "strSport": "Extreme Sports",
+            "strFormat": "Various",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/extreme-sports.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/extreme-sports.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/extreme-sports.png",
+            "strSportDescription": "Extreme sports are activities perceived as involving a high degree of risk. These activities often involve speed, height, a high level of physical exertion, and highly specialized gear."
+        },
+        {
+            "idSport": "128",
+            "strSport": "Table Tennis",
+            "strFormat": "Individual",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/table-tennis.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/table-tennis.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/table-tennis.png",
+            "strSportDescription": "Table tennis, also known as ping-pong, is a sport in which two or four players hit a lightweight ball, also known as the ping-pong ball, back and forth across a table using small rackets."
+        },
+        {
+            "idSport": "129",
+            "strSport": "Multi Sports",
+            "strFormat": "Various",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/multi-sports.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/multi-sports.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/multi-sports.png",
+            "strSportDescription": "Multi-sports involve a combination of different sports or events, either as a competition or as a recreational activity. Participants often need to excel in multiple disciplines to succeed in multi-sports events."
+        },
+        {
+            "idSport": "130",
+            "strSport": "Watersports",
+            "strFormat": "Various",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/watersports.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/watersports.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/watersports.png",
+            "strSportDescription": "Watersports encompass a variety of activities that take place in or on the water. This includes sports such as swimming, surfing, sailing, kayaking, and more."
+        },
+        {
+            "idSport": "131",
+            "strSport": "Weightlifting",
+            "strFormat": "Individual",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/weightlifting.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/weightlifting.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/weightlifting.png",
+            "strSportDescription": "Weightlifting is a sport in which athletes lift weights to compete. The two main lifts in competitive weightlifting are the snatch and the clean and jerk."
+        },
+        {
+            "idSport": "132",
+            "strSport": "Skiing",
+            "strFormat": "Various",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/skiing.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/skiing.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/skiing.png",
+            "strSportDescription": "Skiing is a mode of transport using skis to glide on snow. It is a recreational activity and competitive sport, involving descending a snow-covered slope on skis."
+        },
+        {
+            "idSport": "133",
+            "strSport": "Skating",
+            "strFormat": "Various",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/skating.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/skating.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/skating.png",
+            "strSportDescription": "Skating is a sport and recreational activity that involves gliding on a smooth surface, typically with the use of specialized footwear with wheels, blades, or a board."
+        },
+        {
+            "idSport": "134",
+            "strSport": "Wintersports",
+            "strFormat": "Various",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/wintersports.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/wintersports.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/wintersports.png",
+            "strSportDescription": "Wintersports include various sports and recreational activities that take place in snowy or icy conditions. This can include skiing, snowboarding, ice skating, and more."
+        },
+        {
+            "idSport": "135",
+            "strSport": "Lacrosse",
+            "strFormat": "TeamvsTeam",
+            "strSportThumb": "https://www.thesportsdb.com/images/sports/lacrosse.jpg",
+            "strSportThumbBW": "https://www.thesportsdb.com/images/sports/bw/lacrosse.jpg",
+            "strSportIconGreen": "https://www.thesportsdb.com/images/icons/sports/lacrosse.png",
+            "strSportDescription": "Lacrosse is a team sport played with a lacrosse stick and a lacrosse ball. Players use the head of the lacrosse stick to carry, pass, catch, and shoot the ball into the goal. It is a fast-paced and physically demanding sport."
+        }
+    ]
+}
