@@ -5,7 +5,6 @@ function inicio() {
     const urlPaises = "https://www.thesportsdb.com/api/v1/json/3/all_countries.php";
     const base = "https://www.thesportsdb.com/api/v1/json/3/search_all_teams.php?s=";
 
-    let contenido = document.getElementById("contenido");
     let paises = document.getElementById("paises");
     let deportes = document.getElementById("deportes");
 
@@ -13,6 +12,7 @@ function inicio() {
 
     obtenerPaises();
     obtenerDeportes();
+    
 
     paises.onchange = cargar;
     deportes.onchange = cargar;
@@ -102,4 +102,5 @@ function inicio() {
             cajaEquipos.appendChild(h4Error);
         }
     }
+
 }
