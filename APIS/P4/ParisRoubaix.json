@@ -1,0 +1,51 @@
+[
+  {
+    "id": "1",
+    "nombre": "JoseAndres",
+    "descripcion": "La París-Roubaix (también conocida «El infierno del norte» o «La clásica de las clásicas»)1 es una carrera de un día profesional de ciclismo en ruta que se disputa en la zona septentrional de Francia. ",
+    "imagen": "/img/bici1.jpg",
+    "funcion": "cocinero humanitario"
+  },
+  {
+    "id": "2",
+    "nombre": "Arguinano",
+    "descripcion": "Recorre un trayecto desde Compiègne, ciudad próxima a Región parisina, hasta el velódromo de Roubaix, en la región de Alta Francia, de ahí su nombre. Se celebra con frecuencia el segundo domingo de abril",
+    "imagen": "/img/bici2.jpg",
+    "funcion": "cocinero televisivo"
+  },
+  {
+    "id": "3",
+    "nombre": "Arzak",
+    "descripcion": "Considerada como una de la pruebas ciclistas más duras del mundo, la París-Roubaix se disputó por vez primera en 1896, lo que la convierte en una de las carreras más antiguas que aún permanecen en el calendario internacional.",
+    "imagen": "/img/bici3.jpg",
+    "funcion": "cocinero muy vasco"
+  },
+  {
+    "id": "4",
+    "nombre": "Adria",
+    "descripcion": "Es el tercero de los denominados monumentos del ciclismo (Milán-San Remo, Tour de Flandes, Lieja-Bastoña-Lieja y Giro de Lombardía) y es el segundo y último monumento de pavé de temporada",
+    "imagen": "/img/bici4.jpg",
+    "funcion": "comida muy rara con humos y espumas"
+  },
+  {
+    "id": "5",
+    "nombre": "Adria",
+    "descripcion": "Aparte de su largo kilometraje (260 km aprox.), se caracteriza por sus 50 km de pavé, gran aliciente y dificultad de la carrera",
+    "imagen": "/img/bici5.jpg",
+    "funcion": "comida muy rara con humos y espumas"
+  },
+  {
+    "id": "6",
+    "nombre": "Adria",
+    "descripcion": "Lo que convierte a la París-Roubaix en una carrera única es la extrema dureza del terreno por el que se disputa, el pavés.",
+    "imagen": "/img/bici6.jpg",
+    "funcion": "comida muy rara con humos y espumas"
+  },
+  {
+    "id": "7",
+    "nombre": "Adria",
+    "descripcion": "Pese a que existen otras pruebas que transcurren por tramos adoquinados, ninguna de ellas acumula tantos kilómetros sobre este tipo de superficie, rondando siempre, según el recorrido, los 50 kilómetros. ",
+    "imagen": "/img/bici7.jpg",
+    "funcion": "comida muy rara con humos y espumas"
+  }
+]
