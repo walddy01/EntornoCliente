@@ -1,0 +1,40 @@
+
+
+.contenedor {
+    border:1px solid black;
+    border-radius: 20px;
+    margin: 30px auto;
+    padding: 1em;
+    width: 80%;
+}
+
+.botonera {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:1.5em;
+}
+
+.botonera button {
+    margin: 1em 1em;
+    width: 20%;
+}
+.contenedorR{
+    border:2px solid red;
+    border-radius:20px;
+    margin: 20px auto;
+    width:60%;
+}
+.etiquetaR {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:1.5em;
+}
+.caja{
+    width:10vw;
+    height: 10vh;
+    border:1px solid green;
+    margin:5px 5px;
+}
