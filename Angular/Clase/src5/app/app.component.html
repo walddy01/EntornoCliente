@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <h1>Proyecto {{title}}</h1>
+    <div class="col-auto">
+      <form>
+        <input type="number" name="numero1" [(ngModel)]="numero1">
+        <input type="number" name="numero2" [(ngModel)]="numero2">
+        <input type="submit" (click)="sumar()" value="Sumar">
+        <input type="submit" (click)="restar()" value="Restar">
+        <input type="submit" (click)="multiplicar()" value="Multiplicar">
+        <input type="submit" (click)="dividir()" value="Dividir">
+        <span>{{resultado}}</span>
+      </form>
+    </div>
+  </div>
+</div>

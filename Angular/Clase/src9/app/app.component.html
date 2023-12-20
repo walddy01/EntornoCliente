@@ -1,0 +1,143 @@
+
+<body>
+<div class="row"></div>
+<div class="row">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+<div class="panel panel-primary">
+<div class="panel-heading">
+Calculadora Online
+
+</div>
+<div class="panel-body">
+<div class="input-group">
+<span class="input-group-addon" id="opr"></span>
+<input
+type="text"
+class="form-control"
+id="tResult"
+aria-describedby="basic-addon3"
+value={{visor}}
+readonly
+/>
+</div>
+<br />
+<div
+class="btn-group btn-group-justified"
+role="group"
+aria-label="..."
+>
+<div class="btn-group" role="group">
+<button #siete (click)="operar(siete.value)" value="7" type="button" class="btn btn-default" id="btn_7">
+7
+</button>
+</div>
+<div class="btn-group" role="group">
+<button #ocho (click)="operar(ocho.value)" value="8" type="button" class="btn btn-default" id="btn_8">
+8
+</button>
+</div>
+<div class="btn-group" role="group">
+<button #nueve (click)="operar(nueve.value)" value="9" type="button" class="btn btn-default" id="btn_9">
+9
+</button>
+</div>
+<div class="btn-group" role="group">
+<button #divid (click)="operar(divid.value)" value="-1" type="button" class="btn btn-success" id="btn_div">
+/
+</button>
+</div>
+</div>
+<div
+class="btn-group btn-group-justified"
+role="group"
+aria-label="..."
+>
+<div class="btn-group" role="group">
+<button #cuatro (click)="operar(cuatro.value)" value="4" type="button" class="btn btn-default" id="btn_4">
+4
+</button>
+</div>
+<div class="btn-group" role="group">
+<button #cinco (click)="operar(cinco.value)" value="5" type="button" class="btn btn-default" id="btn_5">
+5
+</button>
+</div>
+<div class="btn-group" role="group">
+<button #seis (click)="operar(seis.value)" value="6" type="button" class="btn btn-default" id="btn_6">
+6
+</button>
+</div>
+<div class="btn-group" role="group">
+<button #multi (click)="operar(multi.value)" value="-2" type="button" class="btn btn-success" id="btn_mul">
+x
+</button>
+</div>
+</div>
+<div
+class="btn-group btn-group-justified"
+role="group"
+aria-label="..."
+>
+<div class="btn-group" role="group">
+<button #uno (click)="operar(uno.value)" value="1" type="button" class="btn btn-default" id="btn_1">
+1
+</button>
+</div>
+<div class="btn-group" role="group">
+<button #dos (click)="operar(dos.value)" value="2" type="button" class="btn btn-default" id="btn_2">
+2
+</button>
+</div>
+<div class="btn-group" role="group">
+<button #tres (click)="operar(tres.value)" value="3" type="button" class="btn btn-default" id="btn_3">
+3
+</button>
+</div>
+<div class="btn-group" role="group">
+<button #sumar (click)="operar(sumar.value)" value="-3" type="button" class="btn btn-success" id="btn_sum">
++
+</button>
+</div>
+</div>
+<div
+class="btn-group btn-group-justified"
+role="group"
+aria-label="..."
+>
+<div class="btn-group" role="group">
+<button #cero (click)="operar(cero.value)" value="0" type="button" class="btn btn-default" id="btn_0">
+0
+</button>
+</div>
+<div class="btn-group" role="group">
+<button #punto (click)="operar(punto.value)" value="-4" type="button" class="btn btn-default" id="btn_pun">
+.
+</button>
+</div>
+<div class="btn-group" role="group">
+<button #igual (click)="operar(igual.value)" value="-5" type="button" class="btn btn-danger" id="btn_ig">
+=
+</button>
+</div>
+<div class="btn-group" role="group">
+<button #menos (click)="operar(menos.value)" value="-6" type="button" class="btn btn-success" id="btn_rest">
+-
+</button>
+</div>
+</div>
+<button #retry (click)="operar(retry.value)" value="-8" type="button" class="btn btn-info btn-lg btn-block" id="btn_r"
+>
+Limpiar visor
+</button>
+<button #borrar (click)="operar(borrar.value)" value="-7" type="button" class="btn btn-primary btn-lg btn-block" id="btn_c"
+>
+Resetear
+</button>
+
+</div>
+</div>
+</div>
+</div>
+</body>
+

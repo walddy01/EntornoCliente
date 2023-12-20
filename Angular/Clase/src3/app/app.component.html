@@ -1,0 +1,6 @@
+<app-cabecera></app-cabecera>
+  <h1 (mouseover)="cambiarNombre()" (mouseleave)="retornarNombre()">Nombre del ciclo: {{ciclo}}</h1>
+  <input type="text" #user placeholder="Introduce un nombre de usuario">
+  <button (click)="cargarNombreUsuario(user.value)" class="btn-primary">Cambiar</button>
+  {{nombreUsuario}}
+<app-pie-pagina></app-pie-pagina>
