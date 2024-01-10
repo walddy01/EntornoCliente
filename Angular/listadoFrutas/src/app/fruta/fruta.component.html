@@ -1,0 +1,30 @@
+<p>fruta works!</p>
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-auto">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>PRECIO</th>
+            <th>UNIDADES</th>
+            <th>IMAGEN</th>
+            <th>ACCIONES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let f of frutas">
+            <td>{{f.id}}</td>
+            <td>{{f.nombre}}</td>
+            <td>{{f.precio}}</td>
+            <td>{{f.unidades}}</td>
+            <td>{{f.imagen}}</td>
+            <td><button type="button" class="btn btn-primary" (click)="modificar()">modificar</button></td>
+            <td><button type="button" class="btn btn-danger" (click)="eliminar()">borrar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
