@@ -1,16 +1,16 @@
 <div class="container">
-  <div class="d-flex justify-content-center">
     <div class="row">
-      <div class="col-auto">
-        <a class="btn btn-primary" routerLink="despliegue">Despliegue</a>
-        <a class="btn btn-primary" routerLink="diw">DIW</a>
-        <a class="btn btn-primary" routerLink="dwec">DWEC</a>
+      <img src="https://www.solvam.es/wp-content/uploads/2018/04/daw.png" alt="DAW" width="250px">
+      <div class="col-12 justify-content-center nav gap-3">
+        <a class="btn btn-warning" routerLink="despliegue">Despliegue</a>
+        <a class="btn btn-success" routerLink="diw">DIW</a>
+        <a class="btn btn-danger" routerLink="dwec">DWEC</a>
         <a class="btn btn-primary" routerLink="dwes">DWES</a>
-      </div>
-      <div class="col-auto">
-        <router-outlet></router-outlet>
       </div>
     </div>
 
-  </div>
+    <div class="row">
+      <router-outlet></router-outlet>
+    </div>
+
 </div>

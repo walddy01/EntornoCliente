@@ -1,16 +1,15 @@
 <div class="container">
-  <div class="d-flex justify-content-center">
-    <div class="row">
-      <div class="col-auto">
-        <a class="btn btn-primary" routerLink="bd">BD</a>
-        <a class="btn btn-primary" routerLink="di">DI</a>
-        <a class="btn btn-primary" routerLink="pmms">PMMS</a>
+  <div class="row">
+      <img src="https://titulae.es/wp-content/uploads/2017/05/FP_T%C3%A9cnico_Superior_en_Desarrollo_de_Aplic_Multiplat-1.jpg" alt="DAM" width="250px">
+      <div class="col-12 justify-content-center nav gap-3">
+        <a class="btn btn-warning" routerLink="bd">BD</a>
+        <a class="btn btn-success" routerLink="di">DI</a>
+        <a class="btn btn-danger" routerLink="pmms">PMMS</a>
         <a class="btn btn-primary" routerLink="psp">PSP</a>
-      </div>
-      <div class="col-auto">
-        <router-outlet></router-outlet>
       </div>
     </div>
 
-  </div>
+    <div class="row">
+      <router-outlet></router-outlet>
+    </div>
 </div>
