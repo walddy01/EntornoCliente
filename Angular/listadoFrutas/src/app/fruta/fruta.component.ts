@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Fruta } from '../fruta';
 import { ServicioFService } from '../servicio-f.service';
 
@@ -8,13 +9,20 @@ import { ServicioFService } from '../servicio-f.service';
   styleUrls: ['./fruta.component.css']
 })
 export class FrutaComponent {
+crearProducto(_t59: NgForm) {
+throw new Error('Method not implemented.');
+}
+selectedProduct: any = {};
+eliminar() {
+}
+modificar() {
+}
+  frutas!: Fruta[];
 
 
-modificar(){}
-eliminar(){}
+  constructor(private httpCliente: ServicioFService) {
+    this.httpCliente.leerProductos().subscribe(x => this.frutas = x);
+  }
 
-frutas!: Fruta[];
-// constructor(private httpCliente:ServicioFService) {
-//   this.httpCliente.leerProductos().subscribe((result:Fruta[])=>this.frutas=result)
-// }
+
 }

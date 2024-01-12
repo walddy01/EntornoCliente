@@ -1,8 +1,8 @@
 <p>fruta works!</p>
 <div class="container">
   <div class="row d-flex justify-content-center">
-    <div class="col-auto">
-      <table class="table">
+    <div class="col-lg-6">
+      <table class="table table-bordered">
         <thead>
           <tr>
             <th>ID</th>
@@ -19,12 +19,26 @@
             <td>{{f.nombre}}</td>
             <td>{{f.precio}}</td>
             <td>{{f.unidades}}</td>
-            <td>{{f.imagen}}</td>
-            <td><button type="button" class="btn btn-primary" (click)="modificar()">modificar</button></td>
-            <td><button type="button" class="btn btn-danger" (click)="eliminar()">borrar</button></td>
+            <td><img src="{{f.imagen}}" alt=""></td>
+            <td><button class="btn btn-info m-2" (click)="modificar()">Modificar</button></td>
+            <td><button class="btn btn-info m-2" (click)="eliminar()">Eliminar</button></td>
           </tr>
         </tbody>
       </table>
     </div>
+    <div class="col-lg-6">
+      <form #f="ngForm">
+        <label>ID</label>
+        <input type="text" name="name" [(ngModel)]="selectedProduct.name">
+        <br>
+        <label>Nombre</label>
+        <input type="text" name="name" [(ngModel)]="selectedProduct.name">
+        <br>
+        <!-- Aquí deberías completar el input con su nombre -->
+        <input type="text" name="nombre">
+        <br>
+        <input type="button" (click)="crearProducto(f)" value="Crear Productos">
+      </form> <!-- Agregué la etiqueta de cierre para el formulario -->
+    </div>
   </div>
-</div>
+</div> <!-- Cerré la etiqueta de cierre div que faltaba -->

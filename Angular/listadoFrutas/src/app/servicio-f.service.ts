@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Fruta } from './fruta';
 @Injectable({
@@ -7,8 +7,8 @@ import { Fruta } from './fruta';
 })
 export class ServicioFService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpCliente: HttpClient) { }
   leerProductos():Observable<Fruta[]>{
-    return this.http.get<Fruta[]>("http://moralo.atwebpages.com/menuAjax/productos2/index.php");
-  }
+    return this.httpCliente.get<Fruta[]>('http://moralo.atwebpages.com/menuAjax/productos2/index.php');
+}
 }
