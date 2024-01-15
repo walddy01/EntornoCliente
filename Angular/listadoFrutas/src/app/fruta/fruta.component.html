@@ -1,44 +1,74 @@
-<p>fruta works!</p>
-<div class="container">
+
+<div class="container-fluid">
+
   <div class="row d-flex justify-content-center">
-    <div class="col-lg-6">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>NOMBRE</th>
-            <th>PRECIO</th>
-            <th>UNIDADES</th>
-            <th>IMAGEN</th>
-            <th>ACCIONES</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let f of frutas">
-            <td>{{f.id}}</td>
-            <td>{{f.nombre}}</td>
-            <td>{{f.precio}}</td>
-            <td>{{f.unidades}}</td>
-            <td><img src="{{f.imagen}}" alt=""></td>
-            <td><button class="btn btn-info m-2" (click)="modificar()">Modificar</button></td>
-            <td><button class="btn btn-info m-2" (click)="eliminar()">Eliminar</button></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="col-auto">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>NOMBRE</th>
+              <th>PRECIO</th>
+              <th>UNIDADES</th>
+              <th>IMAGEN</th>
+              <th colspan="2">ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let f of frutas">
+              <td>{{f.id}}</td>
+              <td>{{f.nombre}}</td>
+              <td>{{f.precio}}</td>
+              <td>{{f.unidades}}</td>
+              <td><img src="{{f.imagen}}" width="80px" alt=""></td>
+              <td><button class="btn btn-info m-2" (click)="seleccionar(f)">Selecionar</button></td>
+              <td><button class="btn btn-danger m-2" (click)="eliminar(f.id)">Eliminar</button></td>
+            </tr>
+          </tbody>
+        </table>
     </div>
-    <div class="col-lg-6">
+
+
+
+
+    <div class="col-auto">
+
       <form #f="ngForm">
-        <label>ID</label>
-        <input type="text" name="name" [(ngModel)]="selectedProduct.name">
-        <br>
-        <label>Nombre</label>
-        <input type="text" name="name" [(ngModel)]="selectedProduct.name">
-        <br>
-        <!-- Aquí deberías completar el input con su nombre -->
-        <input type="text" name="nombre">
-        <br>
-        <input type="button" (click)="crearProducto(f)" value="Crear Productos">
-      </form> <!-- Agregué la etiqueta de cierre para el formulario -->
+        <div class="mb-3">
+          <label class="form-label">ID</label>
+          <input type="text" name="id" class="form-control" [(ngModel)]="selectedProduct.id">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Nombre</label>
+          <input type="text" name="nombre" class="form-control" [(ngModel)]="selectedProduct.nombre">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Precio</label>
+          <input type="number" name="precio" class="form-control" [(ngModel)]="selectedProduct.precio">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Unidades</label>
+          <input type="number" name="unidades" class="form-control" [(ngModel)]="selectedProduct.unidades">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Imagen</label>
+          <input type="text" name="imagen" class="form-control" [(ngModel)]="selectedProduct.nombre">
+        </div>
+
+
+        <input type="button" class="btn btn-primary ml-2" (click)="crearProducto()" value="Crear Productos">
+        <input type="button" class="btn btn-primary ml-2" (click)="actualizarProducto()" value="Actualizar Productos">
+      </form>
+
+
     </div>
+
+
   </div>
+
+
 </div> <!-- Cerré la etiqueta de cierre div que faltaba -->

@@ -21,10 +21,7 @@ export class ServicioFService {
       return this.httpCliente.put<Fruta>('http://moralo.atwebpages.com/menuAjax/productos2/update_product.php', producto);
   }
 
-  // deleteProduct(id: string){
-  //     return this.httpClient.delete<Producto>('http://moralo.atwebpages.com/menuAjax/productos2/delete_product.php/?id='+id);
-  // }
-
-
-
+  deleteProduct(id: string){
+      return this.httpCliente.delete<Fruta>('http://moralo.atwebpages.com/menuAjax/productos2/delete_product.php/?id='+id);
+  }
 }
