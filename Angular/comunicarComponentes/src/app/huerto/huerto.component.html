@@ -1,0 +1,11 @@
+<div style="background-color: orange;">
+  <h1>HUERTO</h1>
+  <span>Mensaje de Huerto para hortaliza: </span><input type="text" [(ngModel)]="mensajeParaHortaliza">
+  <br>
+  <span>Mensaje de Huerto para frutal: </span><input type="text" [(ngModel)]="mensajeParaFrutal">
+  <br>
+  <span>Mensaje de Hortaliza para Huerto: </span>
+</div>
+
+<app-hortaliza [mensajeDeEntradaHortaliza]="mensajeParaHortaliza"></app-hortaliza>
+<app-frutal [mensajeDeEntradaFrutal]="mensajeParaFrutal"></app-frutal>

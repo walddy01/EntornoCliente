@@ -2,8 +2,8 @@
   <mat-label>Filter</mat-label>
   <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
 </mat-form-field>
+<button (click)="abrirDialogo()" class="btn btn-primary">Crear Empleado</button>
 <div class="mat-elevation-z8">
-  <button (click)="abrirDialogo()" class="btn btn-primary">Crear Empleado</button>
   <table mat-table [dataSource]="dataSource" matSort>
 
     <!-- ID Column -->
@@ -53,7 +53,7 @@
     <!-- Modificar Column -->
     <ng-container matColumnDef="modificar">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Modificar </th>
-      <td mat-cell *matCellDef="let Empleado"><button (click)="modificar(Empleado.id)" class="btn btn-primary">Modificar</button></td>
+      <td mat-cell *matCellDef="let Empleado"><button (click)="modificar(Empleado)" class="btn btn-primary">Modificar</button></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="columnas"></tr>

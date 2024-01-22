@@ -1,1 +1,31 @@
-<p>cuadro-dialogo works!</p>
+<div>
+  <h1 mat-dialog-title>Empleados</h1>
+  <div mat-dialog-content>
+    <div class="contenedor">
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.id" type="number" placeholder="inserta id" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.nombre" type="text" placeholder="inserta nombre" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.direccion" type="text" placeholder="inserta direccion" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.cargo" type="text" placeholder="inserta cargo" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.edad" type="number" placeholder="inserta edad" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.imagen" type="text" placeholder="insetar imagen" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="Cancelar()" class="btn btn-danger m-2">Cancelar</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial class="btn btn-primary m-2">Confirmar</button>
+  </div>
+</div>
