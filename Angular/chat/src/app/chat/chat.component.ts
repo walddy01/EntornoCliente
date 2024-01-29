@@ -24,7 +24,7 @@ leerMensaje() {
 }
 
 insertarMensaje() {
-throw new Error('Method not implemented.');
+  this.servicio.altaMensaje(this.msjchat).subscribe((msg:Chat)=>{console.log(msg);});
 }
 
 
