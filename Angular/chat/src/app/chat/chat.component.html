@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <div class="col-auto">
+      <div class="form-group">
+        <label for="">Mensaje</label>
+        <input type="text" name="mensaje" id="mensaje" class="form-control" placeholder="" aria-describedby="helpId" >
+        <button class="btn btn-info m-2" (click)="insertarMensaje()">Insertar Mensaje</button>
+        <button class="btn btn-info m-2" (click)="leerMensaje()">Listar Mensajes</button>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>NOMBRE</th>
+              <th>MENSAJE</th>
+              <th>FECHA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let elemento of listaMensaje">
+              <td>{{elemento.id}}</td>
+              <td>{{elemento.usuario}}</td>
+              <td>{{elemento.mensaje}}</td>
+              <td>{{elemento.fecha}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
