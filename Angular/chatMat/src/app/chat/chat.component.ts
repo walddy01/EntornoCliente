@@ -1,16 +1,17 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chat } from '../chat';
 import { ServicioChatService } from '../servicio-chat.service';
 import {MatPaginator} from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
-export class ChatComponent {
+export class ChatComponent implements  OnInit{
 
 dataSource= new  MatTableDataSource<Chat>();
 
@@ -24,7 +25,15 @@ displayedColumns: string[]=['id','usuario','mensaje','fecha'];
 
 listaMensaje: Chat[] = [];
 
-constructor(private servicio : ServicioChatService){
+
+miParametro: any;
+
+constructor(private route:ActivatedRoute, private router:Router, private servicio : ServicioChatService){
+
+  // this.route.params.subscribe((x:Params)=>this.miParametro=x['name'])
+  this.miParametro = sessionStorage.getItem('Nombre');
+  console.log("usuario"+this.miParametro);
+
   //llamar al método listarVehiculos del sevicio
   this.servicio.obtenerMensajes().subscribe(x=>{
     //listacompleta que inyecta datos al atributo datasource de tabla
@@ -35,6 +44,15 @@ constructor(private servicio : ServicioChatService){
       this.dataSource.sort = this.sort;
     });
 }
+  ngOnInit(): void {
+    if (sessionStorage.getItem('Nombre')==null){
+      this.router.navigate(['login']);
+    }else {
+      if (sessionStorage.getItem('Nombre')=="admin"){
+        this.router.navigate(['admin']);
+      }
+    }
+  }
 
 msjchat: Chat = {
   id:0,
@@ -48,7 +66,13 @@ leerMensaje() {
 }
 
 insertarMensaje() {
+  this.msjchat.usuario= sessionStorage.getItem('Nombre')!;
   this.servicio.altaMensaje(this.msjchat).subscribe((msg:Chat)=>{console.log(msg);});
+}
+
+cerrarSesion() {
+  sessionStorage.clear();
+  this.router.navigate(['login']);
 }
 
 applyFilter(event: KeyboardEvent) {

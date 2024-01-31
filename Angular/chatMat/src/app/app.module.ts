@@ -22,6 +22,9 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule} from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { AdminComponent } from './admin/admin.component';
+import { AdminChatComponent } from './admin-chat/admin-chat.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { MatSortModule } from '@angular/material/sort';
     MenuChatComponent,
     ChatComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    AdminComponent,
+    AdminChatComponent,
+    AdminUsersComponent
   ],
   imports: [
     BrowserModule,

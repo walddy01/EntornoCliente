@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ServicioChatService } from '../servicio-chat.service';
 import { Usuario } from '../usuario';
 
@@ -9,7 +10,7 @@ import { Usuario } from '../usuario';
 })
 export class LoginComponent {
 
-  constructor(private servicio : ServicioChatService){}
+  constructor(private router:Router, private servicio : ServicioChatService){}
 
   usuario: Usuario = {
     idUsuario: 0,
@@ -20,9 +21,18 @@ export class LoginComponent {
   };
 
   logear() {
-    this.servicio.seleccionarUsuario(this.usuario).subscribe((us:Usuario)=>{
+    this.servicio.seleccionarUsuario(this.usuario).subscribe((us:Usuario[])=>{
       if (us!=null){
-        alert("Logueado correctamente. ");
+        alert("Logueado correctamente. " + us[0].nombre);
+
+        sessionStorage.setItem("Nombre", us[0].nombre);
+        if (us[0].nombre == "admin"){
+          this.router.navigate(['admin'], {queryParams: {'nombre': us[0].nombre}});
+        } else {
+          this.router.navigate(['chat'], {queryParams: {'nombre': us[0].nombre}});
+        }
+      } else {
+        alert("Usuario no encontrado o bloqueado.");
       }
     })
   }

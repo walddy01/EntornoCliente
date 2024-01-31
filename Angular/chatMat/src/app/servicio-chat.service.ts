@@ -14,7 +14,6 @@ export class ServicioChatService {
 
   altaMensaje(msg: Chat){
     let fecha = new Date;
-
     msg.fecha=formatDate(fecha, "HH:mm:ss/dd-MM-yyyy", this.locale);
     return this.httpCliente.post<Chat>("http://moralo.atwebpages.com/menuAjax/chat/AltaMensaje.php", msg)
   }
@@ -28,7 +27,16 @@ export class ServicioChatService {
   }
 
 
-  seleccionarUsuario(user: Usuario) :Observable<Usuario>{
-    return this.httpCliente.get<Usuario>("http://moralo.atwebpages.com/menuAjax/chat/SeleccionarUsuario.php?email="+user.email+"&pwd="+user.pwd);
+  seleccionarUsuario(user: Usuario) :Observable<Usuario[]>{
+    return this.httpCliente.get<Usuario[]>("http://moralo.atwebpages.com/menuAjax/chat/SeleccionarUsuario.php?email="+user.email+"&pwd="+user.pwd);
   }
+
+  bloquearUsuario(idUsuario: number){
+    return this.httpCliente.put<Usuario>("http://moralo.atwebpages.com/menuAjax/chat/BloquearUsuario.php", idUsuario);
+  }
+
+  obtenerUsuarios() :Observable<Usuario[]>{
+    return this.httpCliente.get<Usuario[]>("http://moralo.atwebpages.com/menuAjax/chat/ObtenerUsuarios2.php")
+  }
+
 }
