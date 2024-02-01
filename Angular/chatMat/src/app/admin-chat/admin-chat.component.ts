@@ -12,12 +12,19 @@ import { ServicioChatService } from '../servicio-chat.service';
   styleUrls: ['./admin-chat.component.css']
 })
 export class AdminChatComponent  implements OnInit {
-activar() {
-throw new Error('Method not implemented.');
-}
-eliminar() {
-throw new Error('Method not implemented.');
-}
+  eliminar(mensaje: Chat) {
+    console.log(mensaje);
+    this.servicio.bloquearMensaje(mensaje).subscribe(x=>{
+      this.leerMensaje();
+    });
+  }
+
+  activar(mensaje :Chat) {
+    console.log(mensaje);
+    this.servicio.activarMensaje(mensaje).subscribe(x=>{
+      this.leerMensaje();
+    })
+  }
 
   miParametro: string | null;
 
@@ -56,17 +63,25 @@ paginator!: MatPaginator;
 @ViewChild(MatSort, { static: true })
 sort!: MatSort;
 
-displayedColumns: string[]=['id','usuario','mensaje','fecha', 'eliminar', 'activar'];
+displayedColumns: string[]=['id','usuario','mensaje','fecha','activo', 'eliminar', 'activar'];
 
 cerrarSesion() {
   sessionStorage.clear();
   this.router.navigate(['login']);
 }
 
-listaMensaje: Chat[] = [];
+
 
 leerMensaje() {
-  this.servicio.obtenerMensajes().subscribe((msg:Chat[])=>{this.listaMensaje=msg;});
+  //llamar al método listarVehiculos del sevicio
+  this.servicio.obtenerMensajes().subscribe(x=>{
+    //listacompleta que inyecta datos al atributo datasource de tabla
+     this.dataSource.data=x
+    //filtro de paginación
+     this.dataSource.paginator = this.paginator;
+     //filtro para ordenación
+      this.dataSource.sort = this.sort;
+    });
 }
 
 msjchat: Chat = {
@@ -78,7 +93,10 @@ msjchat: Chat = {
 
 insertarMensaje() {
   this.msjchat.usuario= sessionStorage.getItem('Nombre')!;
-  this.servicio.altaMensaje(this.msjchat).subscribe((msg:Chat)=>{console.log(msg);});
+  this.servicio.altaMensaje(this.msjchat).subscribe((msg:Chat)=>{
+    console.log(msg);
+    this.leerMensaje();
+  });
 }
   applyFilter(event: KeyboardEvent) {
     const filtro = (event.target as HTMLInputElement).value;

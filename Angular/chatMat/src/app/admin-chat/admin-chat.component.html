@@ -38,16 +38,22 @@
       <td mat-cell *matCellDef="let chat"> {{chat.fecha}} </td>
     </ng-container>
 
+        <!-- Fruit Column -->
+        <ng-container matColumnDef="activo">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Activo </th>
+          <td mat-cell *matCellDef="let chat"> {{chat.activo}} </td>
+        </ng-container>
+
     <!-- Fruit Column -->
     <ng-container matColumnDef="eliminar">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Eliminar </th>
-      <td mat-cell *matCellDef="let chat"><button class="btn btn-danger m-2" (click)="eliminar()">Eliminar</button> </td>
+      <td mat-cell *matCellDef="let chat"><button class="btn btn-danger m-2" (click)="eliminar(chat)">Eliminar</button> </td>
     </ng-container>
 
     <!-- Fruit Column -->
     <ng-container matColumnDef="activar">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Activar </th>
-      <td mat-cell *matCellDef="let chat"><button class="btn btn-info m-2" (click)="activar()">Eliminar</button></td>
+      <td mat-cell *matCellDef="let chat"><button class="btn btn-info m-2" (click)="activar(chat)">Activar</button></td>
     </ng-container>
 
 

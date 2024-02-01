@@ -22,10 +22,6 @@ sort!: MatSort;
 
 displayedColumns: string[]=['id','usuario','mensaje','fecha'];
 
-
-listaMensaje: Chat[] = [];
-
-
 miParametro: any;
 
 constructor(private route:ActivatedRoute, private router:Router, private servicio : ServicioChatService){
@@ -35,7 +31,7 @@ constructor(private route:ActivatedRoute, private router:Router, private servici
   console.log("usuario"+this.miParametro);
 
   //llamar al método listarVehiculos del sevicio
-  this.servicio.obtenerMensajes().subscribe(x=>{
+  this.servicio.obtenerMensajesActivos().subscribe(x=>{
     //listacompleta que inyecta datos al atributo datasource de tabla
      this.dataSource.data=x
     //filtro de paginación
@@ -62,7 +58,14 @@ msjchat: Chat = {
 }
 
 leerMensaje() {
-  this.servicio.obtenerMensajes().subscribe((msg:Chat[])=>{this.listaMensaje=msg;});
+  this.servicio.obtenerMensajesActivos().subscribe(x=>{
+    //listacompleta que inyecta datos al atributo datasource de tabla
+     this.dataSource.data=x
+    //filtro de paginación
+     this.dataSource.paginator = this.paginator;
+     //filtro para ordenación
+      this.dataSource.sort = this.sort;
+    });
 }
 
 insertarMensaje() {

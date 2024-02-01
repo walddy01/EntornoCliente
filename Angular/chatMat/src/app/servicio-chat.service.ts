@@ -23,20 +23,38 @@ export class ServicioChatService {
   }
 
   obtenerMensajes() :Observable<Chat[]>{
-    return this.httpCliente.get<Chat[]>("http://moralo.atwebpages.com/menuAjax/chat/ObtenerMensajes.php")
+    return this.httpCliente.get<Chat[]>("http://moralo.atwebpages.com/chat/ObtenerMensajes.php")
   }
+
+  obtenerMensajesActivos() :Observable<Chat[]>{
+    return this.httpCliente.get<Chat[]>("http://moralo.atwebpages.com/chat/ObtenerMensajes2.php")
+  }
+
+  bloquearMensaje(msg: Chat) {
+    return this.httpCliente.post<Chat>("http://moralo.atwebpages.com/chat/BloquearMensaje.php", msg);
+  }
+
+  activarMensaje(msg: Chat) {
+    return this.httpCliente.post<Chat>("http://moralo.atwebpages.com/chat/ActivarMensaje.php", msg);
+  }
+
 
 
   seleccionarUsuario(user: Usuario) :Observable<Usuario[]>{
     return this.httpCliente.get<Usuario[]>("http://moralo.atwebpages.com/menuAjax/chat/SeleccionarUsuario.php?email="+user.email+"&pwd="+user.pwd);
   }
 
-  bloquearUsuario(idUsuario: number){
-    return this.httpCliente.put<Usuario>("http://moralo.atwebpages.com/menuAjax/chat/BloquearUsuario.php", idUsuario);
+  obtenerUsuarios() :Observable<Usuario[]>{
+    return this.httpCliente.get<Usuario[]>("http://moralo.atwebpages.com/chat/ObtenerUsuarios.php")
   }
 
-  obtenerUsuarios() :Observable<Usuario[]>{
-    return this.httpCliente.get<Usuario[]>("http://moralo.atwebpages.com/menuAjax/chat/ObtenerUsuarios2.php")
+  bloquearUsuario(user: Usuario) {
+    return this.httpCliente.post<Usuario>("http://moralo.atwebpages.com/chat/BloquearUsuario.php", user);
   }
+
+  activarUsuario(user: Usuario) {
+    return this.httpCliente.post<Usuario>("http://moralo.atwebpages.com/chat/ActivarUsuario.php", user);
+  }
+
 
 }
