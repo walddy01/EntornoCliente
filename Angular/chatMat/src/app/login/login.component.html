@@ -9,7 +9,13 @@
         <label for="password">Password</label>
         <input type="text" name="password" id="password" class="form-control" placeholder="" aria-describedby="helpId" [(ngModel)]="usuario.pwd">
       </div>
-      <button class="btn btn-info m-2" (click)="logear()">Loguear</button>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked [(ngModel)]="privado">
+          Chat Privado
+        </label>
+      </div>
+      <button class="btn btn-info m-2" (click)="logear()">Login</button>
     </div>
   </div>
 </div>

@@ -4,6 +4,7 @@ import { Usuario } from './usuario';
 import { Chat } from './chat';
 import { Observable } from 'rxjs';
 import { formatDate } from '@angular/common';
+import { ChatP } from './chat-p';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +39,19 @@ export class ServicioChatService {
     return this.httpCliente.post<Chat>("http://moralo.atwebpages.com/chat/ActivarMensaje.php", msg);
   }
 
+  altaMensajeP(msg: Chat){
+    let fecha = new Date;
+    msg.fecha=formatDate(fecha, "HH:mm:ss/dd-MM-yyyy", this.locale);
+    return this.httpCliente.post<Chat>("http://moralo.atwebpages.com/menuAjax/chat/AltaMensaje.php", msg)
+  }
 
+  obtenerMensajesE() :Observable<ChatP[]>{
+    return this.httpCliente.get<ChatP[]>("http://moralo.atwebpages.com/menuAjax/chat/ObtenerMensajesE.php?usuario="+sessionStorage.getItem('Nombre'))
+  }
+
+  obtenerMensajesP() :Observable<ChatP[]>{
+    return this.httpCliente.get<ChatP[]>("http://moralo.atwebpages.com/menuAjax/chat/ObtenerMensajesP.php")
+  }
 
   seleccionarUsuario(user: Usuario) :Observable<Usuario[]>{
     return this.httpCliente.get<Usuario[]>("http://moralo.atwebpages.com/menuAjax/chat/SeleccionarUsuario.php?email="+user.email+"&pwd="+user.pwd);
@@ -55,6 +68,4 @@ export class ServicioChatService {
   activarUsuario(user: Usuario) {
     return this.httpCliente.post<Usuario>("http://moralo.atwebpages.com/chat/ActivarUsuario.php", user);
   }
-
-
 }

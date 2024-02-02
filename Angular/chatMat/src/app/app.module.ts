@@ -25,6 +25,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { AdminComponent } from './admin/admin.component';
 import { AdminChatComponent } from './admin-chat/admin-chat.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
+import { ChatPrivadoComponent } from './chat-privado/chat-privado.component';
+import { ChatEComponent } from './chat-e/chat-e.component';
+import { ChatPComponent } from './chat-p/chat-p.component';
 
 
 @NgModule({
@@ -36,7 +39,10 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
     RegistroComponent,
     AdminComponent,
     AdminChatComponent,
-    AdminUsersComponent
+    AdminUsersComponent,
+    ChatPrivadoComponent,
+    ChatEComponent,
+    ChatPComponent
   ],
   imports: [
     BrowserModule,
