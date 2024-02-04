@@ -25,18 +25,13 @@ displayedColumns: string[]=['id','usuario','mensaje','fecha'];
 miParametro: any;
 
 constructor(private route:ActivatedRoute, private router:Router, private servicio : ServicioChatService){
-
-  // this.route.params.subscribe((x:Params)=>this.miParametro=x['name'])
   this.miParametro = sessionStorage.getItem('Nombre');
   console.log("usuario"+this.miParametro);
 
   //llamar al método listarVehiculos del sevicio
   this.servicio.obtenerMensajesActivos().subscribe(x=>{
-    //listacompleta que inyecta datos al atributo datasource de tabla
      this.dataSource.data=x
-    //filtro de paginación
      this.dataSource.paginator = this.paginator;
-     //filtro para ordenación
       this.dataSource.sort = this.sort;
     });
 }
@@ -59,11 +54,8 @@ msjchat: Chat = {
 
 leerMensaje() {
   this.servicio.obtenerMensajesActivos().subscribe(x=>{
-    //listacompleta que inyecta datos al atributo datasource de tabla
      this.dataSource.data=x
-    //filtro de paginación
      this.dataSource.paginator = this.paginator;
-     //filtro para ordenación
       this.dataSource.sort = this.sort;
     });
 }

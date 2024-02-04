@@ -29,7 +29,11 @@ export class LoginComponent {
 
         if(this.privado){
           console.log("Entrando a chat privado");
-          this.router.navigate(['privado']);
+          if (us[0].nombre == "admin"){
+            this.router.navigate(['admin']);
+          } else {
+            this.router.navigate(['privado']);
+          }
         }else {
           if (us[0].nombre == "admin"){
             this.router.navigate(['admin']);
@@ -42,24 +46,6 @@ export class LoginComponent {
         alert("Usuario no encontrado o bloqueado.");
       }
     })
-
-
-
-
-    // this.servicio.seleccionarUsuario(this.usuario).subscribe((us:Usuario[])=>{
-    //   if (us!=null){
-    //     alert("Logueado correctamente. " + us[0].nombre);
-
-    //     sessionStorage.setItem("Nombre", us[0].nombre);
-    //     if (us[0].nombre == "admin"){
-    //       this.router.navigate(['admin'], {queryParams: {'nombre': us[0].nombre}});
-    //     } else {
-    //       this.router.navigate(['chat'], {queryParams: {'nombre': us[0].nombre}});
-    //     }
-    //   } else {
-    //     alert("Usuario no encontrado o bloqueado.");
-    //   }
-    // })
   }
 
 }

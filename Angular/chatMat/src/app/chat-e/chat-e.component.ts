@@ -26,18 +26,12 @@ export class ChatEComponent implements  OnInit{
   miParametro: any;
   
   constructor(private route:ActivatedRoute, private router:Router, private servicio : ServicioChatService){
-  
-    // this.route.params.subscribe((x:Params)=>this.miParametro=x['name'])
     this.miParametro = sessionStorage.getItem('Nombre');
     console.log("usuario"+this.miParametro);
-  
-    //llamar al método listarVehiculos del sevicio
+
     this.servicio.obtenerMensajesE().subscribe(x=>{
-      //listacompleta que inyecta datos al atributo datasource de tabla
        this.dataSource.data=x
-      //filtro de paginación
        this.dataSource.paginator = this.paginator;
-       //filtro para ordenación
         this.dataSource.sort = this.sort;
       });
   }
@@ -61,23 +55,10 @@ export class ChatEComponent implements  OnInit{
   
   leerMensaje() {
     this.servicio.obtenerMensajesE().subscribe(x=>{
-      //listacompleta que inyecta datos al atributo datasource de tabla
        this.dataSource.data=x
-      //filtro de paginación
        this.dataSource.paginator = this.paginator;
-       //filtro para ordenación
         this.dataSource.sort = this.sort;
       });
-  }
-  
-  insertarMensaje() {
-    this.msjchat.usuario= sessionStorage.getItem('Nombre')!;
-    this.servicio.altaMensaje(this.msjchat).subscribe((msg:Chat)=>{console.log(msg);});
-  }
-  
-  cerrarSesion() {
-    sessionStorage.clear();
-    this.router.navigate(['login']);
   }
   
   applyFilter(event: KeyboardEvent) {

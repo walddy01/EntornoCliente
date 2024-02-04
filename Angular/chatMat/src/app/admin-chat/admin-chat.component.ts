@@ -11,44 +11,39 @@ import { ServicioChatService } from '../servicio-chat.service';
   templateUrl: './admin-chat.component.html',
   styleUrls: ['./admin-chat.component.css']
 })
-export class AdminChatComponent  implements OnInit {
+export class AdminChatComponent implements OnInit {
   eliminar(mensaje: Chat) {
     console.log(mensaje);
-    this.servicio.bloquearMensaje(mensaje).subscribe(x=>{
+    this.servicio.bloquearMensaje(mensaje).subscribe(x => {
       this.leerMensaje();
     });
   }
 
-  activar(mensaje :Chat) {
+  activar(mensaje: Chat) {
     console.log(mensaje);
-    this.servicio.activarMensaje(mensaje).subscribe(x=>{
+    this.servicio.activarMensaje(mensaje).subscribe(x => {
       this.leerMensaje();
     })
   }
 
   miParametro: string | null;
 
-  constructor(private router:Router, private servicio : ServicioChatService){
-
-    // this.route.params.subscribe((x:Params)=>this.miParametro=x['name'])
+  constructor(private router: Router, private servicio: ServicioChatService) {
     this.miParametro = sessionStorage.getItem('Nombre');
-    console.log("usuario"+this.miParametro);
+    console.log("usuario" + this.miParametro);
 
-    //llamar al método listarVehiculos del sevicio
-    this.servicio.obtenerMensajes().subscribe(x=>{
-      //listacompleta que inyecta datos al atributo datasource de tabla
-       this.dataSource.data=x
-      //filtro de paginación
-       this.dataSource.paginator = this.paginator;
-       //filtro para ordenación
-        this.dataSource.sort = this.sort;
-      });
+
+    this.servicio.obtenerMensajes().subscribe(x => {
+      this.dataSource.data = x
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
   }
   ngOnInit(): void {
-    if (sessionStorage.getItem('Nombre')==null){
+    if (sessionStorage.getItem('Nombre') == null) {
       this.router.navigate(['login']);
-    }else {
-      if (sessionStorage.getItem('Nombre')!=="admin"){
+    } else {
+      if (sessionStorage.getItem('Nombre') !== "admin") {
         this.router.navigate(['chat']);
       } else {
         this.router.navigate(['admin']);
@@ -56,48 +51,42 @@ export class AdminChatComponent  implements OnInit {
     }
   }
 
-dataSource= new  MatTableDataSource<Chat>();
+  dataSource = new MatTableDataSource<Chat>();
 
-@ViewChild(MatPaginator, { static: true })
-paginator!: MatPaginator;
-@ViewChild(MatSort, { static: true })
-sort!: MatSort;
+  @ViewChild(MatPaginator, { static: true })
+  paginator!: MatPaginator;
+  @ViewChild(MatSort, { static: true })
+  sort!: MatSort;
 
-displayedColumns: string[]=['id','usuario','mensaje','fecha','activo', 'eliminar', 'activar'];
+  displayedColumns: string[] = ['id', 'usuario', 'mensaje', 'fecha', 'activo', 'eliminar', 'activar'];
 
-cerrarSesion() {
-  sessionStorage.clear();
-  this.router.navigate(['login']);
-}
-
-
-
-leerMensaje() {
-  //llamar al método listarVehiculos del sevicio
-  this.servicio.obtenerMensajes().subscribe(x=>{
-    //listacompleta que inyecta datos al atributo datasource de tabla
-     this.dataSource.data=x
-    //filtro de paginación
-     this.dataSource.paginator = this.paginator;
-     //filtro para ordenación
+  cerrarSesion() {
+    sessionStorage.clear();
+    this.router.navigate(['login']);
+  }
+  
+  leerMensaje() {
+    this.servicio.obtenerMensajes().subscribe(x => {
+      this.dataSource.data = x
+      this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
-}
+  }
 
-msjchat: Chat = {
-  id:0,
-  usuario: '',
-  fecha: '',
-  mensaje: '',
-}
+  msjchat: Chat = {
+    id: 0,
+    usuario: '',
+    fecha: '',
+    mensaje: '',
+  }
 
-insertarMensaje() {
-  this.msjchat.usuario= sessionStorage.getItem('Nombre')!;
-  this.servicio.altaMensaje(this.msjchat).subscribe((msg:Chat)=>{
-    console.log(msg);
-    this.leerMensaje();
-  });
-}
+  insertarMensaje() {
+    this.msjchat.usuario = sessionStorage.getItem('Nombre')!;
+    this.servicio.altaMensaje(this.msjchat).subscribe((msg: Chat) => {
+      console.log(msg);
+      this.leerMensaje();
+    });
+  }
   applyFilter(event: KeyboardEvent) {
     const filtro = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filtro.trim().toLowerCase();

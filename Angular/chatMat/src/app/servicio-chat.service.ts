@@ -39,10 +39,10 @@ export class ServicioChatService {
     return this.httpCliente.post<Chat>("http://moralo.atwebpages.com/chat/ActivarMensaje.php", msg);
   }
 
-  altaMensajeP(msg: Chat){
+  altaMensajeP(msg: ChatP){
     let fecha = new Date;
     msg.fecha=formatDate(fecha, "HH:mm:ss/dd-MM-yyyy", this.locale);
-    return this.httpCliente.post<Chat>("http://moralo.atwebpages.com/menuAjax/chat/AltaMensaje.php", msg)
+    return this.httpCliente.post<ChatP>("http://moralo.atwebpages.com/menuAjax/chat/AltaMensajeP.php", msg)
   }
 
   obtenerMensajesE() :Observable<ChatP[]>{
