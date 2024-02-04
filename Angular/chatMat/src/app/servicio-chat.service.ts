@@ -50,7 +50,7 @@ export class ServicioChatService {
   }
 
   obtenerMensajesP() :Observable<ChatP[]>{
-    return this.httpCliente.get<ChatP[]>("http://moralo.atwebpages.com/menuAjax/chat/ObtenerMensajesP.php")
+    return this.httpCliente.get<ChatP[]>("http://moralo.atwebpages.com/menuAjax/chat/ObtenerMensajesP.php?usuario="+sessionStorage.getItem('Nombre'))
   }
 
   seleccionarUsuario(user: Usuario) :Observable<Usuario[]>{
