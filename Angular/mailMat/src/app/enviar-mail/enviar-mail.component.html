@@ -1,0 +1,30 @@
+<br>
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Usuario</mat-label>
+    <input matInput placeholder="Usuario" value="{{usuario}}" disabled>
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Destinario</mat-label>
+    <input matInput placeholder="Destinario" [(ngModel)]="email.destinatario">
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Asunto</mat-label>
+    <input matInput placeholder="Asunto" [(ngModel)]="email.asunto">
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Mensaje</mat-label>
+    <input matInput placeholder="Mensaje" [(ngModel)]="email.mensaje">
+  </mat-form-field>
+</p>
+
+<button mat-raised-button color="accent" (click)="enviarMensaje()">Enviar</button>
