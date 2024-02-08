@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
@@ -7,13 +7,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { Correo } from '../correo';
 import { ServicioMailService } from '../servicio-mail.service';
 
-
 @Component({
-  selector: 'app-recibir-mail',
-  templateUrl: './recibir-mail.component.html',
-  styleUrls: ['./recibir-mail.component.css']
+  selector: 'app-recibir-no-leido-mail',
+  templateUrl: './recibir-no-leido-mail.component.html',
+  styleUrls: ['./recibir-no-leido-mail.component.css']
 })
-export class RecibirMailComponent {
+export class RecibirNoLeidoMailComponent {
 
   constructor (private http : ServicioMailService) {
     this.mostrarMensajes();
@@ -25,11 +24,11 @@ export class RecibirMailComponent {
   sort!: MatSort;
 
   dataSource = new MatTableDataSource<Correo>();
-  displayedColumns: string[] = ['id', 'origen', 'destinatario', 'mensaje', 'asunto', 'fecha', 'leido'];
+  displayedColumns: string[] = ['id', 'origen', 'destinatario', 'mensaje', 'asunto', 'fecha', 'leido', 'marcar'];
 
   correo : Correo = {
     id: 0,
-    origen: 'walddy',
+    origen: 'camacho',
     destinatario: '',
     mensaje: '',
     asunto: '',
@@ -37,10 +36,17 @@ export class RecibirMailComponent {
     leido: 0
   }
   mostrarMensajes() {
-    this.http.mensajesRecibidos(this.correo.origen).subscribe( x => {
+    this.http.mensajesNoLeidos(this.correo.origen).subscribe( x => {
       this.dataSource.data = x;
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+    })
+  }
+
+  MarcarLeido(correo: Correo) {
+    console.log(correo);
+    this.http.leerMensaje(correo).subscribe( x => {
+      this.mostrarMensajes();
     })
   }
 
@@ -57,4 +63,4 @@ export class RecibirMailComponent {
     }
   }
 
-  }
+}

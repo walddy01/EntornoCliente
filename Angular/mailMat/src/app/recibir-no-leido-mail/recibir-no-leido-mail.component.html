@@ -1,4 +1,4 @@
-<h2>Recibidos</h2>
+<h2>No Leidos</h2>
 
 <mat-form-field>
   <mat-label>Filter</mat-label>
@@ -50,6 +50,12 @@
       <td mat-cell *matCellDef="let correo"> {{correo.leido}} </td>
     </ng-container>
 
+    <!-- Marcar como leido Column -->
+    <ng-container matColumnDef="marcar">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Leido </th>
+      <td mat-cell *matCellDef="let correo"><button mat-raised-button color="accent" (click)="MarcarLeido(correo)">Enviar</button>      </td>
+    </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
@@ -61,5 +67,3 @@
 
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
 </div>
-
-

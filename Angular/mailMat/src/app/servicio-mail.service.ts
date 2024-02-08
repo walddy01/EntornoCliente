@@ -26,8 +26,8 @@ export class ServicioMailService {
     return this.http.post<Correo>('http://moralo.atwebpages.com/serviciosMail/MandarMensajeMail.php', mail);
   }
 
-  leerMensaje(id: number) :Observable<Correo> {
-    return this.http.post<Correo>('http://moralo.atwebpages.com/serviciosMail/LeerMensaje.php', id);
+  leerMensaje(mail: Correo){
+    return this.http.post('http://moralo.atwebpages.com/serviciosMail/LeerMensaje.php', mail, {responseType: 'text'});
   }
 
 }

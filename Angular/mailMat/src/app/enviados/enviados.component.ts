@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
@@ -7,13 +7,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { Correo } from '../correo';
 import { ServicioMailService } from '../servicio-mail.service';
 
-
 @Component({
-  selector: 'app-recibir-mail',
-  templateUrl: './recibir-mail.component.html',
-  styleUrls: ['./recibir-mail.component.css']
+  selector: 'app-enviados',
+  templateUrl: './enviados.component.html',
+  styleUrls: ['./enviados.component.css']
 })
-export class RecibirMailComponent {
+export class EnviadosComponent {
+
+
+
 
   constructor (private http : ServicioMailService) {
     this.mostrarMensajes();
@@ -29,7 +31,7 @@ export class RecibirMailComponent {
 
   correo : Correo = {
     id: 0,
-    origen: 'walddy',
+    origen: 'camacho',
     destinatario: '',
     mensaje: '',
     asunto: '',
@@ -37,13 +39,12 @@ export class RecibirMailComponent {
     leido: 0
   }
   mostrarMensajes() {
-    this.http.mensajesRecibidos(this.correo.origen).subscribe( x => {
+    this.http.mensajesEnviados(this.correo.origen).subscribe( x => {
       this.dataSource.data = x;
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     })
   }
-
   ngAfterViewInit() {
     this.mostrarMensajes();
   }
@@ -57,4 +58,4 @@ export class RecibirMailComponent {
     }
   }
 
-  }
+}

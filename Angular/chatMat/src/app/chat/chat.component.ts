@@ -53,6 +53,7 @@ msjchat: Chat = {
 }
 
 leerMensaje() {
+  console.log("Leyendo");
   this.servicio.obtenerMensajesActivos().subscribe(x=>{
      this.dataSource.data=x
      this.dataSource.paginator = this.paginator;

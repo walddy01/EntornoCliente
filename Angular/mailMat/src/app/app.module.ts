@@ -17,6 +17,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {MatSort, MatSortModule} from '@angular/material/sort';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import { RecibirNoLeidoMailComponent } from './recibir-no-leido-mail/recibir-no-leido-mail.component';
+import { EnviadosComponent } from './enviados/enviados.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     EnviarMailComponent,
     RecibirMailComponent,
     GmailComponent,
+    RecibirNoLeidoMailComponent,
+    EnviadosComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +47,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatSortModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
