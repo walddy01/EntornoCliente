@@ -30,4 +30,11 @@ export class ServicioMailService {
     return this.http.post('http://moralo.atwebpages.com/serviciosMail/LeerMensaje.php', mail, {responseType: 'text'});
   }
 
+  borrarMensaje(mail: Correo){
+    return this.http.delete('http://moralo.atwebpages.com/serviciosMail/eliminarMail.php?id=' + mail.id);
+  }
+
+  loginMail(pwd: String) :Observable<String> {
+    return this.http.get<String>('http://moralo.atwebpages.com/serviciosMail/logeoMail.php?pwd=' + pwd);
+  }
 }

@@ -14,11 +14,18 @@ export class EnviarMailComponent {
 
 constructor(private http : ServicioMailService) { }
 
-usuario: String = 'walddy';
+usuario!: String;
+password!: String;
 
+buscarUsuario() {
+  this.http.loginMail(this.password).subscribe((x) => {
+    // this.usuario = x[0];
+    console.log(x[0].nombre);
+  });
+}
 email: Correo = {
   id: 0,
-  origen: this.usuario,
+  origen: '',
   destinatario: '',
   mensaje: '',
   asunto: '',

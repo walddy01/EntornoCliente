@@ -15,6 +15,12 @@ import { ServicioMailService } from '../servicio-mail.service';
 })
 export class RecibirMailComponent {
 
+  borrarMensaje(mail: Correo) {
+    this.http.borrarMensaje(mail).subscribe(() => {
+      this.mostrarMensajes();
+    })
+  }
+
   constructor (private http : ServicioMailService) {
     this.mostrarMensajes();
   }
@@ -25,11 +31,11 @@ export class RecibirMailComponent {
   sort!: MatSort;
 
   dataSource = new MatTableDataSource<Correo>();
-  displayedColumns: string[] = ['id', 'origen', 'destinatario', 'mensaje', 'asunto', 'fecha', 'leido'];
+  displayedColumns: string[] = ['id', 'origen', 'destinatario', 'mensaje', 'asunto', 'fecha', 'leido', 'borrar'];
 
   correo : Correo = {
     id: 0,
-    origen: 'walddy',
+    origen: 'camacho',
     destinatario: '',
     mensaje: '',
     asunto: '',

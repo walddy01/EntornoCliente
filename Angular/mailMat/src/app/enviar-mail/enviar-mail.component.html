@@ -8,6 +8,13 @@
 
 <p>
   <mat-form-field appearance="outline">
+    <mat-label>Contraseña</mat-label>
+    <input (keydown.enter)="buscarUsuario()" matInput placeholder="Contraseña" [(ngModel)]="password">
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field appearance="outline">
     <mat-label>Destinario</mat-label>
     <input matInput placeholder="Destinario" [(ngModel)]="email.destinatario">
   </mat-form-field>
