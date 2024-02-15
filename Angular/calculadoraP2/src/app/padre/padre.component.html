@@ -1,0 +1,8 @@
+<button (click)="generar()">Generar</button>
+<app-hijo [numa1]="num1" [numa2]="num2" (devolverNum1)="recibir($event)" (devolverNum2)="recibir2($event)"></app-hijo>
+<p>n1: {{num1}}</p>
+<p>n2: {{num2}}</p>
+<p>Resultado de la suma: {{resultadoSuma}}</p>
+<p>Resultado del producto: {{resultadoProducto}}</p>
+
+

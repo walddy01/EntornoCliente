@@ -20,7 +20,7 @@ password!: String;
 buscarUsuario() {
   this.http.loginMail(this.password).subscribe((x) => {
     // this.usuario = x[0];
-    console.log(x[0].nombre);
+    // console.log(x[0].nombre);
   });
 }
 email: Correo = {

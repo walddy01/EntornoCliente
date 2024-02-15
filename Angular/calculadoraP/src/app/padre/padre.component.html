@@ -1,0 +1,10 @@
+<button (click)="generar()">Generar</button>
+<p>Numero 1: {{num1}}</p>
+<p>Numero 2: {{num2}}</p>
+
+<app-hijo [numeroRandom1]="num1" [numeroRandom2]="num2" (suma)="sumar($event)" (resta)="restar($event)" (producto)="multiplicar($event)" (division)="dividir($event)" ></app-hijo>
+
+<p>Suma: {{resultadoSuma}}</p>
+<p>Resta: {{resultadoResta}}</p>
+<p>Multiplicacion: {{resultadoProducto}}</p>
+<p>Division: {{resultadoDivision}}</p>
