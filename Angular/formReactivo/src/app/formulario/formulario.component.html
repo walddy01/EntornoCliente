@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row d-flex-justify-content-center">
+    <div class="col-lg-4 d-flex">
+      <form [formGroup]="formulario1" (onSubmit)="enviar()">
+        <!-- nombre -->
+        <label for="name">Nombre</label>
+        <input type="text" class="form-control" formControlName="name" name="name" id="name">
+        <div class="invalid-feedback">
+          Validation message
+        </div>
+
+        <!-- Firstname -->
+        <label for="firstname">Apellidos</label>
+        <input type="text" class="form-control" formControlName="firstname" name="firstname" id="firstname">
+        <div class="invalid-feedback">
+          Validation message
+        </div>
+
+        <!-- email -->
+        <label for="email">Correo Electronico</label>
+        <input type="email" class="form-control" formControlName="email" name="email" id="email">
+        <div class="invalid-feedback">
+          Validation message
+        </div>
+
+        <!-- password -->
+        <label for="password">Contraseña</label>
+        <input type="password" class="form-control" formControlName="password" name="password" id="password">
+        <div class="invalid-feedback">
+          Validation message
+        </div>
+
+        <br>
+        <button type="submit" class="btn btn-primary" [disabled]="!formulario1.valid">Enviar</button>
+        <!-- TODO: This is for server side, there is another version for browser defaults -->
+      </form>
+    </div>
+  </div>
+</div>

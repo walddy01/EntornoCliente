@@ -1,5 +1,9 @@
-<app-header [infoHeader]="clase" (clasePrincipal)="recibirClasePrincipal($event)"></app-header>
+<app-header [infocabecera]="clase"
+ (clasePrincipal)="cargarClasePrincipal($event)">
+</app-header>
 <app-body></app-body>
 <app-footer></app-footer>
 <input type="text" [(ngModel)]="clase">
-<p [ngClass]="claseRecibida"> Nombre de la clase recibida: {{claseRecibida}}</p>
+<p [ngClass]="claseRecibida">
+  Nombre de la clase recibida {{claseRecibida}}
+</p>

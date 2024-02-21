@@ -1,1 +1,4 @@
-<input type="text" [(ngModel)]="claseNueva" (keyup)="recibirClase($event)">
+<div>
+  <input type="text" [(ngModel)]="claseNueva" (keyup)="enviarclase()">
+  <p [ngClass]="infocabecera">Formato recibido desde el padre</p>
+</div>

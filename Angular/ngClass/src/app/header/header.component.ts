@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-claseNueva: string = "";
-@Input() infoHeader: string = "";
-recibirClase($event: KeyboardEvent) {
-
-}
+enviarclase() {
+  this.clasePrincipal.emit({ ordenHijo:this.claseNueva})
+  }
+  @Input() infocabecera:string="";
+  @Output() clasePrincipal=new EventEmitter();
+  claseNueva:string="";
 
 }
