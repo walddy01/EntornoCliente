@@ -1,0 +1,29 @@
+<form [formGroup]="formulario" (ngSubmit)="enviar()">
+  <div class="example-container">
+    <mat-form-field>
+      <mat-label>CIF</mat-label>
+      <input matInput formControlName="cif">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Nombre y Apellidos</mat-label>
+      <input matInput placeholder="Nombre y Apellidos" formControlName="nombre">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Nota 1</mat-label>
+      <input matInput placeholder="Nota 1" formControlName="n1">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Nota 2</mat-label>
+      <input matInput placeholder="Nota 2" formControlName="n2">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Nota 3</mat-label>
+      <input matInput placeholder="Nota 3" formControlName="n3">
+    </mat-form-field>
+    <br>
+  </div>
+</form>

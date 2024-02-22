@@ -1,0 +1,59 @@
+<div class="container-md">
+  <form [formGroup]="miFormulario" (ngSubmit)="enviarDatos()">
+  <div class="row justify-content-center">
+      <div class="col-6 mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" formControlName="nombre" name="nombre" id="nombre" class="form-control" placeholder="Nombre" aria-describedby="helpId" />
+        <small id="helpId" class="text-danger" *ngIf="miFormulario.get('nombre')?.errors?.['required']">El nombre es obligatorio</small>
+        <small id="helpId" class="text-danger" *ngIf="miFormulario.get('nombre')?.errors?.['minlength']">El nombre debe tener al menos 3 caracteres</small>
+        <small id="helpId" class="text-danger" *ngIf="miFormulario.get('nombre')?.errors?.['maxlength']">El nombre no puede tener mas de 10 caracteres</small>
+        <small id="helpId" class="text-danger" *ngIf="miFormulario.get('nombre')?.errors?.['pattern']">El nombre solo puede contener letras</small>
+      </div>
+
+      <div class="col-6 mb-3">
+        <label for="apellido" class="form-label">Apellido</label>
+        <input type="email" formControlName="apellido" name="apellido" id="apellido" class="form-control" placeholder="Apellido" aria-describedby="helpId" />
+        <small id="helpId" class="text-danger" *ngIf="miFormulario.get('apellido')?.errors?.['required']">El apellido es obligatorio</small>
+        <small id="helpId" class="text-danger" *ngIf="miFormulario.get('apellido')?.errors?.['minlength']">El apellido debe tener al menos 3 caracteres</small>
+        <small id="helpId" class="text-danger" *ngIf="miFormulario.get('apellido')?.errors?.['maxlength']">El apellido no puede tener mas de 10 caracteres</small>
+        <small id="helpId" class="text-danger" *ngIf="miFormulario.get('apellido')?.errors?.['pattern']">El apellido solo puede contener letras</small>
+    </div>
+
+  </div>
+
+
+
+  <div class="row justify-content-center">
+    <div class="col-6 mb-3">
+      <label for="fecha" class="form-label">Fecha</label>
+      <input type="date" formControlName="fecha" name="fecha" id="fecha" class="form-control" placeholder="Fecha" aria-describedby="helpId" />
+      <small id="helpId" class="text-danger" *ngIf="miFormulario.get('fecha')?.errors?.['required']">La fecha es obligatoria</small>
+    </div>
+
+    <div class="col-6 mb-3">
+        <label for="tarjeta" class="form-label">Tarjeta de credito</label>
+        <input type="text" formControlName="tarjeta" name="tarjeta" id="tarjeta" class="form-control" placeholder="Tarjeta" aria-describedby="helpId" />
+        <small id="helpId" class="text-danger" *ngIf="miFormulario.get('tarjeta')?.errors?.['required']">El tarjeta de credito es obligatoria</small>
+        <small id="helpId" class="text-danger" *ngIf="miFormulario.get('tarjeta')?.errors?.['minlength']">La tarjeta de credito debe tener 20 caracteres</small>
+        <small id="helpId" class="text-danger" *ngIf="miFormulario.get('tarjeta')?.errors?.['maxlength']">La tarjeta de credito debe tener como máximo 20 caracteres</small>
+        <small id="helpId" class="text-danger" *ngIf="miFormulario.get('tarjeta')?.errors?.['pattern']">La tarjeta de credito solo puede contener numeros</small>
+    </div>
+  </div>
+
+
+  <div class="row justify-content-center">
+    <div class="col-6 mb-3">
+      <label for="pwd" class="form-label">Contraseña</label>
+      <input type="text" formControlName="pwd" name="pwd" id="pwd" class="form-control" placeholder="Contraseña" aria-describedby="helpId" />
+      <small id="helpId" class="text-danger" *ngIf="miFormulario.get('pwd')?.errors?.['required']">La contraseña es obligatoria</small>
+      <small id="helpId" class="text-danger" *ngIf="miFormulario.get('pwd')?.errors?.['pattern']">La contraseña debe tener al menos 8 caracteres e incluir al menos una letra minúscula, una letra mayúscula, un número</small>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-6 mb-3 text-center">
+      <button class="btn btn-primary" type="submit" [disabled]="!miFormulario.valid">Enviar</button>
+    </div>
+  </div>
+  </form>
+</div>
