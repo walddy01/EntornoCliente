@@ -1,0 +1,76 @@
+<form [formGroup]="miform">
+
+  <mat-form-field>
+    <mat-label>Codigo CIF</mat-label>
+    <input matInput formControlName="cif" >
+    <mat-error *ngIf="miform.get('cif')?.hasError('pattern')">No cumple los requisitos</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nombre y Apellidos</mat-label>
+    <input matInput formControlName="nombre" >
+    <mat-error *ngIf="miform.get('nombre')?.hasError('minlength')">Nombre demasiado corto</mat-error>
+    <mat-error *ngIf="miform.get('cif')?.hasError('maxlength')">Nombre demasiado largo</mat-error>
+
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nota 1</mat-label>
+    <input matInput formControlName="n1" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nota 2</mat-label>
+    <input matInput formControlName="n2" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nota 3</mat-label>
+    <input matInput formControlName="n3" >
+  </mat-form-field>
+
+    <button mat-stroked-button  (click)="EnviarNotas()">Enviar</button>
+
+
+</form>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="cif">
+    <th mat-header-cell *matHeaderCellDef> Codigo CIF </th>
+    <td mat-cell *matCellDef="let element"> {{element.cif}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="n1">
+    <th mat-header-cell *matHeaderCellDef> Nota 1 </th>
+    <td mat-cell *matCellDef="let element"> {{element.n1}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="n2">
+    <th mat-header-cell *matHeaderCellDef> Nota 2 </th>
+    <td mat-cell *matCellDef="let element"> {{element.n2}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="n3">
+    <th mat-header-cell *matHeaderCellDef> Nota 3 </th>
+    <td mat-cell *matCellDef="let element"> {{element.n3}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+</table>
+
+

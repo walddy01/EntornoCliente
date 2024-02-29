@@ -1,7 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { Coche } from '../coche';
 import { ServicioAutoService } from '../servicio-auto.service';
@@ -11,47 +9,43 @@ import { ServicioAutoService } from '../servicio-auto.service';
   templateUrl: './form-c.component.html',
   styleUrls: ['./form-c.component.css']
 })
-export class FormCComponent implements OnInit {
-myForm!: FormGroup;
+export class FormCComponent implements OnInit{
+
+dataSource= new MatTableDataSource<Coche>();
+
+columnas: String[]=['matricula','motor','climatizador','cargadorElectrico','gps','neumaticos'];
+miform!: FormGroup;
 
 
 
-  constructor(private servicio: ServicioAutoService, private fb : FormBuilder) {
-    this.myForm = this.fb.group({
-      matricula: [''],
-      diesel: [''],
-      gasolina: [''],
-      electrico: [''],
-      hibrido: [''],
-      climatizador: [''],
-      cargadorElectrico: [''],
-      gps: [''],
-      neumatico: ['']
-    })
-  }
-
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-
+constructor(private servicio: ServicioAutoService, private fb: FormBuilder){
+  this.miform=this.fb.group({
+    matricula:['',[Validators.required,Validators.pattern('^[0-9]{4}[A-Z]{3}$')]],
+    motor: ['',[Validators.required]],
+    climatizador: ['false',[]],
+    cargadorElectrico: ['false',[]],
+    gps: ['false',[]],
+    neumaticos: ['',[Validators.required]]
+  })
+}
   ngOnInit(): void {
-    this.servicio.obtenerCoches().subscribe((coche:Coche[])=>{
-      this.dataSource.data=coche;
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-    });
+  this.servicio.obtenerCoche().subscribe((coche:Coche[])=>
+  {
+    this.dataSource.data=coche;
+  })
   }
 
-  dataSource = new MatTableDataSource<Coche>;
-  displayedColumns: string[] = ['matricula', 'motor', 'climatizador', 'cargadorElectrico', 'gps', 'neumaticos'];
+  EnviarDatos() {
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
+    if(this.miform.valid){
+      this.servicio.insertarCoche(this.miform.value).subscribe(()=>{
+        alert('Datos Enviados');
+        this.dataSource.data.push(this.miform.value);
+        this.dataSource._updateChangeSubscription();
+        this.miform.reset();
+      });
+    }else{
+      alert('Datos no Enviados');
     }
   }
-
 }

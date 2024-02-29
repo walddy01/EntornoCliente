@@ -5,19 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormCComponent } from './form-c/form-c.component';
-
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatSort, MatSortModule} from '@angular/material/sort';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import {MatRadioModule} from '@angular/material/radio';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule} from '@angular/material/select';
+import{MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatCardModule} from '@angular/material/card';
-
+import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
+import{ MatDividerModule} from '@angular/material/divider';
+import { HttpClientModule } from '@angular/common/http';
+import{MatInputModule} from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,18 +23,16 @@ import {MatCardModule} from '@angular/material/card';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
     MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
     MatRadioModule,
     MatCheckboxModule,
-    MatCardModule,
-    ReactiveFormsModule
-
+    MatFormFieldModule,
+    MatDividerModule,
+    HttpClientModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
