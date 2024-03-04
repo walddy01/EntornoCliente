@@ -1,0 +1,39 @@
+<mat-form-field>
+  <mat-label>Nombre Cliente</mat-label>
+  <input matInput placeholder="Nombre Cliente" [(ngModel)]="nombreCliente" required>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Paradores</mat-label>
+  <mat-select disableRipple [(ngModel)]="paradorSeleccionado">
+    <mat-option *ngFor="let item of paradores" value="{{item.nombre}}">{{item.nombre}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+  <mat-label>Fecha de Entrada</mat-label>
+  <input matInput [matDatepicker]="picker1" [(ngModel)]="fecha1">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker1">
+    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+  </mat-datepicker-toggle>
+  <mat-datepicker #picker1></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+  <mat-label>Fecha de Salida</mat-label>
+  <input matInput [matDatepicker]="picker2" [(ngModel)]="fecha2">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker2">
+    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+  </mat-datepicker-toggle>
+  <mat-datepicker #picker2 ></mat-datepicker>
+</mat-form-field>
+
+<button mat-raised-button color="accent" (click)="reservar()">Reservar</button>
+<button mat-raised-button color="primary" (click)="reset()">Resetear</button>
+
+
+
+
+
