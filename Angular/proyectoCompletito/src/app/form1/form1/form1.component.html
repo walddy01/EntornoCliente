@@ -1,0 +1,40 @@
+<form action="" [formGroup]="miformulario">
+  <mat-form-field>
+    <mat-label>Nombre Cliente</mat-label>
+    <input matInput placeholder="Nombre Cliente" formControlName="nombre">
+    <mat-error *ngIf="miformulario.get('nombre')?.hasError('required')">Nombre requerido</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Paradores</mat-label>
+    <mat-select disableRipple formControlName="parador">
+      <mat-option *ngFor="let item of paradores" value="{{item.nombre}}">{{item.nombre}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="miformulario.get('parador')?.hasError('required')">Parador requerido</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Fecha de Entrada</mat-label>
+    <input matInput [matDatepicker]="picker1" formControlName="fecha1">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker1">
+      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+    <mat-error *ngIf="miformulario.get('fecha1')?.hasError('required')">Fecha de entrada requerida</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Fecha de Salida</mat-label>
+    <input matInput [matDatepicker]="picker2" formControlName="fecha2">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker2">
+      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker2 ></mat-datepicker>
+    <mat-error *ngIf="miformulario.get('fecha1')?.hasError('required')">Fecha de salida requerida</mat-error>
+  </mat-form-field>
+</form>
+
+<button mat-flat-button color="accent" [disabled]="miformulario.invalid" (click)="reservar()">Reservar</button>
+<button mat-raised-button color="primary" (click)="reset()">Resetear</button>
