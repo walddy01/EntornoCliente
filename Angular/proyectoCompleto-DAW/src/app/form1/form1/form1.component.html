@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-auto">
+      <form class="example-form" [formGroup]="miform">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre cliente</mat-label>
+          <input type="text" matInput placeholder="" formControlName="nombre">
+          <mat-error *ngIf="miform.get('nombre')?.hasError('required')">El nombre es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Parador</mat-label>
+          <mat-select required formControlName="parador">
+            <mat-option *ngFor="let p of paradores" value="{{p.nombre}}">{{p.nombre}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="miform.get('parador')?.hasError('required')">El parador es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Fecha de entrada</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="fechaE">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="miform.get('fechaE')?.hasError('required')">La fecha es requerida</mat-error>
+          <mat-error *ngIf="miform.get('fechaE')?.hasError('fechaNoValida')">La fecha debe ser mayor a la actual</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Fecha de salida</mat-label>
+          <input matInput [matDatepicker]="picker2" formControlName="fechaS">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+          <mat-error *ngIf="miform.get('fechaS')?.hasError('required')">La fecha es requerida</mat-error>
+          <mat-error *ngIf="miform.get('fechaS')?.hasError('fechaNoValida')">La fecha debe ser mayor a la fecha de entrada</mat-error>
+
+        </mat-form-field>
+
+        <button type="submit" [disabled]="miform.invalid" (click)="enviar()" mat-stroked-button color="primary">Reservar</button>
+        <button type="reset" mat-stroked-button color="accent">Resetear</button>
+
+      </form>
+    </div>
+  </div>
+</div>

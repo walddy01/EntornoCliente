@@ -35,7 +35,6 @@
     <mat-error *ngIf="miformulario.get('fecha1')?.hasError('required')">Fecha de salida requerida</mat-error>
   </mat-form-field>
 </form>
-
 <button mat-flat-button color="accent" [disabled]="miformulario.invalid" (click)="reservar()">Reservar</button>
 <button mat-raised-button color="primary" (click)="reset()">Resetear</button>
 

@@ -1,0 +1,53 @@
+<form action="" [formGroup]="miFormulario">
+<mat-form-field>
+  <mat-label>Empleado ID</mat-label>
+  <mat-select disableRipple formControlName="id">
+    <mat-option *ngFor="let item of ids" value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+  <mat-error *ngIf="miFormulario.get('id')?.hasError('required')">Debes seleccionar una Id.</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Empleado Nombre</mat-label>
+  <mat-select disableRipple formControlName="nombre">
+    <mat-option *ngFor="let item of empleados" value="{{item.nombre}}">{{item.nombre}}</mat-option>
+  </mat-select>
+  <mat-error *ngIf="miFormulario.get('nombre')?.hasError('required')">Debes seleccionar un nombre.</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Empleado Dirección</mat-label>
+  <mat-select disableRipple formControlName="direccion">
+    <mat-option *ngFor="let item of empleados" value="{{item.direccion}}">{{item.direccion}}</mat-option>
+  </mat-select>
+  <mat-error *ngIf="miFormulario.get('direccion')?.hasError('required')">Debes seleccionar una dirección.</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Empleado Cargo</mat-label>
+  <mat-select disableRipple formControlName="cargo">
+    <mat-option *ngFor="let item of empleados" value="{{item.cargo}}">{{item.cargo}}</mat-option>
+  </mat-select>
+  <mat-error *ngIf="miFormulario.get('cargo')?.hasError('required')">Debes seleccionar un cargo.</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Empleado Edad</mat-label>
+  <mat-select disableRipple formControlName="edad">
+    <mat-option *ngFor="let item of empleados" value="{{item.edad}}">{{item.edad}}</mat-option>
+  </mat-select>
+  <mat-error *ngIf="miFormulario.get('edad')?.hasError('required')">Debes seleccionar una edad.</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Empleado Imagen</mat-label>
+  <mat-select disableRipple formControlName="imagen">
+    <mat-option *ngFor="let item of empleados" value="{{item.imagen}}"><img src="{{item.imagen}}" alt="{{item.id}}" ></mat-option>
+  </mat-select>
+  <mat-error *ngIf="miFormulario.get('imagen')?.hasError('required')">Debes seleccionar una imagen.</mat-error>
+</mat-form-field>
+
+<img src="{{miFormulario.get('imagen')?.value}}" alt="">
+<button mat-flat-button color="accent" [disabled]="miFormulario.invalid" (click)="enviar()">Enviar</button>
+<button mat-raised-button color="primary" (click)="reset()">Resetear</button>
+</form>

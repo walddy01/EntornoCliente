@@ -1,0 +1,7 @@
+<div id="hortaliza">
+  <h2>Hortaliza</h2>
+  <input [(ngModel)]="mensajeParaHuerto" (keyup)="enviaMensaje()"/>
+  <button (click)="enviarSemilleros()">Mandar Semilleros</button>
+
+  <p>El Huerto  dice: {{ mensajeDeEntradaHortaliza}}</p>
+</div>

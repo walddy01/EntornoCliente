@@ -1,0 +1,16 @@
+<h3>Horas</h3>
+<p>{{horas}}</p>
+<h3>Minutos</h3>
+<p>{{minutos}}</p>
+<h3>Segundos</h3>
+<p>{{segundos}}</p>
+<h3>Décimas</h3>
+<p>{{decimas}}</p>
+
+<app-temporizador
+ [decimas]="0"
+ (contadorDecimas)="actualizarDecimas($event)"
+ (contadorSegundos)="actualizarSegundos($event)"
+ (contadorMinutos)="actualizarMinutos($event)"
+ (contadorHoras)="actualizarHoras($event)"
+></app-temporizador>

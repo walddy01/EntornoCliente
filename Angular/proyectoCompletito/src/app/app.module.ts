@@ -17,11 +17,15 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MAT_DATE_LOCALE} from '@angular/material/core';
+import { Form1Component } from './form1/form1/form1.component';
+import { Form2Component } from './form2/form2/form2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
+    Form1Component,
+    Form2Component
   ],
   imports: [
     BrowserModule,

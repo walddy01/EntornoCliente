@@ -1,0 +1,10 @@
+<div class="container bg-info bg-opacity-50">
+  <h3>Huerto</h3>
+  <label for="">Mensaje de huerto hacia hortaliza --> </label>
+  <input type="text" [(ngModel)]="mensaje1">
+  <app-hortaliza [mensajeParaHortaliza]="mensaje1"
+  (mensajeDeHijo)="mensajeFP($event)"></app-hortaliza>
+  <label for="">Mensaje de huerto hacia frutal --> </label>
+  <input type="text" [(ngModel)]="mensaje2">
+  <app-frutal [mensajeParaFrutal]="mensaje2"></app-frutal>
+</div>
